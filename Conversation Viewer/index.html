@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Histórico de conversas</title>
+    <meta charset="UTF-8">
+    <title>Visualizador de conversas</title>
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="custom.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script type="text/javascript" 
+        src="https://unpkg.com/jszip@3.1.5/dist/jszip.js"></script>
+   <!--  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/blip-cards@1.55.11/dist/blip-cards.js"></script> -->
+    <script src="functions.js"></script>
+
+</head>
+
+<body>
+
+    <div class="rectangle-main">
+        <img class="main-logo" src="images/logo-BLiP.png"></img>
+        <p class="main-title">Conversations viewer</p>
+        <p class="main-subtitle">Find and export your contacts' conversation history</p>
+        <center>
+            <label class="label-token" for="token">Bot's token</label><br>
+            <input class="input-token" required onkeyup="stoppedTyping(this)" type="text" id="token" name="token"
+                placeholder="Ex.: Key 4tcvr8q4a6nypaq74221=">
+            <button class="bp-btn bp-btn--blip-dark" disabled id="b-visualizar" onclick="getInfo()">Search</button>
+            <br><br><br>
+    </div>
+
+    <div id="loader" style="display: none"></div>
+
+    <div style="display:none;" id="page-content">
+
+        <div class="form-date" style="display: none;">
+            <p class="filter-label">Filter by date</p>
+            <input type="date" class="input-date" id="initial" name="initial">
+            <p style="display: inline" class="filter-to">to</p>
+            <input type="date" class="input-date" id="final" name="final">
+            <button class="bp-btn bp-btn--blip-light bp-btn--small" id="b-filtrar" onclick="filter()">Filter</button>
+        </div>
+
+        <table class="bp-table" id="bp-table" style="display: none">
+            <thead>
+                <tr>
+                    <th class="tl"></th>
+                    <th class="tc"><b>Name</b></th>
+                    <th class="tr"><b>Channel</b></th>
+                    <th class="tl"><b>User ID</b></th>
+                    <th class="tc"><b>Date</b></th>
+                    <!-- <th class="tl"><b>Actions</b></th> -->
+                    <th class="tr"> <label class="bp-input--check--wrapper mb4">
+                        <br><input class="bp-input" type="checkbox" onClick="toggle(this)" name="checkbox-all">
+                        <div class="bp-input--checkbox">&check;</div>
+                    </label>
+                </th>
+                </tr>
+            </thead>
+
+            <tbody id="data">
+            </tbody>
+        </table>
+        <div class="pagination-block">
+            <a class="previous round" id="button_prev"><</a>
+            <a id="page_number" class="outline-none"></a>
+            <a class="next round" id="button_next">></a>
+        </div>
+        </center>
+
+        <div class="export-button">
+            <button class="bp-btn bp-btn--true" id="b-exportar" onClick="exportCsv()" style="display: none;">Export</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
