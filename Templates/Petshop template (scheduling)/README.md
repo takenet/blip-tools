@@ -26,8 +26,8 @@ Para começar a utilizar o bot, é preciso configurar sua conta no Google, fazer
 2. Crie um novo bot e importe o fluxo para ele
 3. Crie uma conta no Google.
 4. Nessa conta, crie um Agenda no [Google Calendar](https://calendar.google.com), e pegue o seu ID
-     * Acesse a agenda, clique em **Opções**
-       ![](images/calendar_config.png)
+     * Acesse a agenda, clique em **Opções**<br>
+       ![](images/calendar_config.png)<br>
      * Procure pelo **Id da Agenda** e copie-o.
 5. No bot, crie uma variável de configuração chamada **calendarId** e coloque como valor o Id da Agenda que você acabou de copiar.
 6. Crie um projeto no **[Google Cloud Platform](https://console.cloud.google.com/)**
