@@ -37,8 +37,8 @@ Para começar a utilizar o bot, é preciso configurar sua conta no Google, fazer
 6. Selecione "Criar credenciais" e crie uma  **Chave de Api**. Copie o valor informado.
 7. Crie uma variável de configuração chamada **apiKey** e coloque o valor copiado no passo 6.
 8. Selecione "Criar credenciais" novamente, desta vez optando por criar um **Id do cliente Oauth**
-    8.1. Selecione **Aplicativo Web**
-    8.2. Informe um nome
+    * Selecione **Aplicativo Web**
+    * Informe um nome
 9. Ao final, copie o **Id do cliente** e a **chave secreta do cliente**
 10. Entre no **[OAuth 2.0 Playground](https://developers.google.com/oauthplayground/)**
 11. Procure por **Calendar API V3** na lista de APIs. Selecione todos os escopos disponíveis para ela e clique em **Authorize APIs**
