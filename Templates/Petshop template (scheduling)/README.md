@@ -10,7 +10,7 @@ Esse chatbot foi feito para ajudar Petshops a oferecerem seus serviços e uma ma
 
 ## Exemplo de uso
 
-![](images/Exemplo01.png) ![](images/Exemplo02.png)
+![](images/Exemplo01.png) ![](images/Exemplo02.png)<br>
 ![](images/Exemplo03.png) ![](images/Exemplo04.png)
 
 
@@ -26,12 +26,12 @@ Para começar a utilizar o bot, é preciso configurar sua conta no Google, fazer
 2. Crie um novo bot e importe o fluxo para ele
 3. Crie uma conta no Google.
 4. Nessa conta, crie um Agenda no [Google Calendar](https://calendar.google.com), e pegue o seu ID
-       2.1 Acesse a agenda, clique em **Opções**
+     * Acesse a agenda, clique em **Opções**
        ![](images/calendar_config.png)
-       2.2 Procure pelo **Id da Agenda** e copie-o.
+     * Procure pelo **Id da Agenda** e copie-o.
 5. No bot, crie uma variável de configuração chamada **calendarId** e coloque como valor o Id da Agenda que você acabou de copiar.
 6. Crie um projeto no **[Google Cloud Platform](https://console.cloud.google.com/)**
-7. Com o projeto criado, acesse a área **APIs e Serviços** e clique em **Credenciais**.
+7. Com o projeto criado, acesse a área **APIs e Serviços** e clique em **Credenciais**.<br>
 ![](images/credenciais.png)<br>
 
 6. Selecione "Criar credenciais" e crie uma  **Chave de Api**. Copie o valor informado.
