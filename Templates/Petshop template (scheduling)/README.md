@@ -12,7 +12,6 @@ Esse chatbot foi feito para ajudar Petshops a oferecerem seus serviços e uma ma
 
 ![](images/Exemplo01.png) ![](images/Exemplo02.png)
 ![](images/Exemplo03.png) ![](images/Exemplo04.png)
-![](images/Exemplo05.png)
 
 
 ## Pré requisitos
@@ -23,7 +22,7 @@ Esse chatbot foi feito para ajudar Petshops a oferecerem seus serviços e uma ma
 
 ## Como usar
 Para começar a utilizar o bot, é preciso configurar sua conta no Google, fazer a autenticação e informar para qual agenda os eventos serão enviados.
-1. Baixe o fluxo do bot
+1. [Baixe o fluxo do bot](https://github.com/takenet/blip-tools/blob/master/Templates/Petshop%20template%20(scheduling)/petShop_template.json)
 2. Crie um novo bot e importe o fluxo para ele
 3. Crie uma conta no Google.
 4. Nessa conta, crie um Agenda no [Google Calendar](https://calendar.google.com), e pegue o seu ID
