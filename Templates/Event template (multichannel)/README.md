@@ -8,7 +8,7 @@ Esse chatbot foi feito para ajudar Comunidades e Empresas a divulgarem e oferece
 
 
 ## Como usar
-1. Baixe o fluxo do bot
+1. [Baixe o fluxo do bot](https://github.com/takenet/blip-tools/blob/master/Templates/Event%20template%20(multichannel)/event_template.json)
 2. Crie um novo bot e importe o fluxo para ele.
 
 
