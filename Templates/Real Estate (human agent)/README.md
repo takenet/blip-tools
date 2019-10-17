@@ -4,12 +4,12 @@ Esse chatbot foi feito para coletar informações sobre clientes que querem comp
 
 ## Exemplo de uso
 
-![](images/Exemplo01.png) ![](images/Exemplo02.png)<br>
-![](images/Exemplo03.png) 
+![](images/exemplo01.png) ![](images/exemplo02.png)<br>
+![](images/exemplo03.png) 
 
 
 ## Como usar
-1. Baixe o fluxo do bot
+1. [Baixe o fluxo do bot](https://github.com/takenet/blip-tools/blob/master/Templates/Real%20Estate%20(human%20agent)/real_estate.json)
 2. Crie um novo bot e importe o fluxo para ele.
 3. Defina os horários de atendimento nas variáveis de configuração
     * Horário de início do atendimento : ***startDate (ex.: 09:00)***
