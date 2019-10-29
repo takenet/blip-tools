@@ -8,8 +8,6 @@ Esse chatbot foi feito para ajudar Concessionárias de Carros a divulgarem e ofe
 * Atendimento humano
 
 
-## Exemplo de uso
-
 
 ## Como usar
 1. [Baixe o fluxo do bot](https://github.com/takenet/blip-tools/blob/master/Templates/Car%20Dealership%20Template%20(multichannel)/carDealership_template.json)
