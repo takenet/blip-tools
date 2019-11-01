@@ -4,9 +4,7 @@ Esse chatbot foi feito para coletar informações sobre as necessidades de um cl
 
 ## Exemplo de uso
 
-![](images/exemplo01.png) ![](images/exemplo02.png)<br>
-![](images/exemplo03.png) 
-
+![](images/Exemplo01.png) ![](images/Exemplo02.png)<br>
 
 ## Como usar
 1. Baixe o fluxo do bot
