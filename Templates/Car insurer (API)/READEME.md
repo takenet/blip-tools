@@ -4,8 +4,8 @@ Esse chatbot foi feito para auxiliar Seguradoras de carros a prestar serviços p
 
 ## Exemplo de uso
 
-![](images/exemplo01.png) ![](images/exemplo02.png)<br>
-![](images/exemplo03.png) 
+![](images/Exemplo01.png) ![](images/Exemplo02.png)<br>
+![](images/Exemplo03.png) 
 
 
 ## Como usar
