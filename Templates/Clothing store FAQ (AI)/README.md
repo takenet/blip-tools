@@ -8,7 +8,7 @@ Esse chatbot foi feito para ajudar Comunidades e Empresas a divulgarem e oferece
 ![](images/Exemplo05.PNG)
 
 ## Como usar
-1. [Baixe o arquivo .zip contendo o fluxo do bot, as intenções e entidades ](https://github.com/takenet/blip-tools/blob/master/Templates/Event%20template%20(multichannel)/event_template.json)
+1. [Baixe o arquivo .zip contendo o fluxo do bot, as intenções e entidades ](https://github.com/takenet/blip-tools/raw/master/Templates/Clothing%20store%20FAQ%20(AI)/clothing_store_faq.zip)
 2. Crie um novo bot e importe o fluxo para ele a partir do arquivo **faqlojavirtual.json**.
     * [Importando o fluxo de um bot no Builder](https://help.blip.ai/docs/builder/importando-o-fluxo-de-um-bot-no-builder/)
 3. Ative um provedor de sua preferencia:
