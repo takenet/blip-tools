@@ -1,0 +1,45 @@
+@import './globals';
+@import '~blip-toolkit/dist/scss/main';
+@import 'tachyons';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: $bp-ff;
+}
+
+body {
+  background-color: $bp-color-whisper;
+  color: $bp-color-rooftop;
+}
+
+a {
+  color: $bp-color-blip-light;
+  text-decoration: none;
+}
+
+#main {
+  margin: 10px auto;
+  width: 80%;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.bp-tabs-container .bp-tab-content {
+  padding-top: 20px;
+}
+
+.w6 {
+  width: 24rem;
+}

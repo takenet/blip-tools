@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing BlipIcon Should render outline icon 1`] = `
+<svg
+  height="1em"
+  width="1em"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlnsXlink="http://www.w3.org/1999/xlink"
+>
+  <use
+    className="bp-icon--blip-light"
+    xlinkHref="defs.svg#close-outline"
+  />
+</svg>
+`;
+
+exports[`Testing BlipIcon Should render solid icon 1`] = `
+<svg
+  height="1em"
+  width="1em"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlnsXlink="http://www.w3.org/1999/xlink"
+>
+  <use
+    className="bp-icon--blip-light"
+    xlinkHref="defs.svg#close-solid"
+  />
+</svg>
+`;
