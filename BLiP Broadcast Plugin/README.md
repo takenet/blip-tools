@@ -28,10 +28,11 @@
 
 2. Install all packages from npm:
 
-`cd sample && npm install`
+`npm install`
 
 3. Run the project:
 
 `npm start`
 
 4. Now just add the plugin to your chatbot and enjoy!
+

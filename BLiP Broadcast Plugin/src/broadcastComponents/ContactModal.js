@@ -24,7 +24,7 @@ function ModalView(props) {
 
 
     return (
-        <Modal show={props.display} onHide={props.handleClose}>
+        <Modal show={props.display} onHide={props.handleClose} centered>
             <Modal.Header closeButton>
                 <h3>Informações do contato</h3>
             </Modal.Header>

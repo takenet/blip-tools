@@ -54,7 +54,7 @@ function ContactTable(props) {
                             <tr>
                                 <th>ID de Usuário</th>
                                 <th>Nome</th>
-                                <th></th>
+                                <th>Ações</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -63,14 +63,14 @@ function ContactTable(props) {
                                     <tr key={i}>
                                         <td onClick={() => { handleOpenModal(item) }} >{item.identity}</td>
                                         <td onClick={() => { handleOpenModal(item) }} >{item.name}</td>
-                                        <td><Button variant="success" style={{ float: 'center' }} onClick={() => props.handleAdd(item.identity)}> <FiUserPlus /> Adicionar</Button></td>
+                                        <td><Button variant="success" style={{ display: 'block', margin: 'auto' }}  onClick={() => props.handleAdd(item.identity)}> <FiUserPlus /> Adicionar</Button></td>
                                     </tr>
                                 )
                             })}
                         </tbody>
                     </Table>
                     {data.length === 0 ?
-                        <td colspan="3" style={{ background: 'gray' }}>
+                        <td colSpan="3" style={{ background: 'gray' }}>
                             <div style={{ textDecorationColor: 'white', textAlign: 'center' }}> Sem registros</div>
                         </td>
                         :

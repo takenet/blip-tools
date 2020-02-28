@@ -31,7 +31,7 @@ function MembersTable(props) {
                     <tr>
                         <th>#</th>
                         <th>Nome</th>
-                        <th></th>
+                        <th>Ações</th>
 
                     </tr>
                 </thead>
@@ -41,7 +41,7 @@ function MembersTable(props) {
                             <tr key={i}>
                                 <td>{(props.pagination * 20) + i + 1}</td>
                                 <td>{item}</td>
-                                <td><Button variant="danger" style={{ float: 'center' }} onClick={() => props.handleRemove(item)}> <FiUserMinus /> Retirar</Button></td>
+                                <td><Button variant="danger" style={{ display: 'block', margin: 'auto' }} onClick={() => props.handleRemove(item)}> <FiUserMinus /> Retirar</Button></td>
                             </tr>
                         )
                     })}
