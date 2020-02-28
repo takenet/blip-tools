@@ -1,6 +1,6 @@
 # BLiP Broadcast Plugin
 
- This is a BLiP example plugin made to help users manage distribuiton lists with ease.
+ This is a BLiP example plugin made to help users manage distribution lists with ease.
 
  Visit the sample [page here](https://blip-broadcast-plugin.netlify.com/).
 
@@ -19,6 +19,12 @@
 }
 
 ```
+See the result below:
+![Define information in advanced settings](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/advanced_configuration.png)
+
+3. Access the following path shown below to use the plugin:
+
+![Path to access the plugin](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/img2.png)
 
 ## Getting started from this project
 
