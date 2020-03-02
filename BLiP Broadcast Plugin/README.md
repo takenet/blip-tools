@@ -4,7 +4,7 @@
 
  Visit the sample [page here](https://blip-broadcast-plugin.netlify.com/).
  
- ## What is possible to do with this plugin?
+ ## What is possible to do with this plugin
  
  ### Distribution Lists
  1. See all the distribution lists of the bot.
