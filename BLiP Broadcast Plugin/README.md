@@ -37,7 +37,7 @@
 ![Filter contacts](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast4.png)
 
  4. See all contact information.
-  ![See all contact information](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast4.png)
+  ![See all contact information](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast5.png)
   
 
 ## Connecting the plugin to your bot
