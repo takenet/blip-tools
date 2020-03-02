@@ -22,7 +22,14 @@
  ### Contacts
  
  1. See all the contacts' bot.
- 2. Filter all the contacts' bot.
+ 2. Filter all the contacts' bot by:
+* Name
+* Email
+* Phone
+* City
+* Id
+* Extras
+   
  3. Add contacts into the selected distribution list.
  
  ![Manage contacts](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast3.png)
