@@ -3,6 +3,30 @@
  This is a BLiP example plugin made to help users manage distribution lists with ease.
 
  Visit the sample [page here](https://blip-broadcast-plugin.netlify.com/).
+ 
+ ## What is possible to do with this plugin
+ 
+ ### Distribution Lists
+ 1. See all the distribution lists of the bot.
+ 2. Add new lists.
+ 
+ ![Manage List](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast1.png)
+ 
+ ### Members
+ 
+ 1. See all the members' distribution list. 
+ 2. Remove a member from a distribution list.
+ 
+ ![Manage members](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast2.png)
+ 
+ ### Contacts
+ 
+ 1. See all the contacts' bot.
+ 2. Filter all the contacts' bot.
+ 3. Add contacts into the selected distribution list.
+ 
+ ![Manage contacts](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast3.png)
+ ![Filter contacts](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast4.png)
 
 ## Connecting the plugin to your bot
 1. Access your bot's advanced configuration.
