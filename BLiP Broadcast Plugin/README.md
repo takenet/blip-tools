@@ -22,18 +22,23 @@
  ### Contacts
  
  1. See all the contacts' bot.
- 2. Filter all the contacts' bot by:
+ 2. Add contacts into the selected distribution list.
+ 
+ ![Manage contacts](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast3.png)
+ 
+ 3. Filter all the contacts' bot by:
 * Name
 * Email
 * Phone
 * City
 * Id
 * Extras
-   
- 3. Add contacts into the selected distribution list.
- 
- ![Manage contacts](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast3.png)
- ![Filter contacts](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast4.png)
+
+![Filter contacts](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast4.png)
+
+ 4. See all contact information.
+  ![See all contact information](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast4.png)
+  
 
 ## Connecting the plugin to your bot
 1. Access your bot's advanced configuration.
