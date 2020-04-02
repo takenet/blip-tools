@@ -1,7 +1,7 @@
 # Customer Service Template Generator
 
 This is a project made to help users to set up a customer service schedule.
-
+Available on https://customer-service-template-generator.netlify.com/
 ## Project features
 
 ### Set up a schedule
