@@ -4,11 +4,20 @@ import { Button } from 'react-bootstrap';
 import template from '../Base/atendimento-horario.json';
 import { buildText } from '../util.js';
 import { Download } from 'react-bootstrap-icons';
+import ReactGA from 'react-ga';
+
 
 function TemplateBox({ data }) {
     template['0a2d7b49-9df3-4e94-9714-eefd7ed84a6e'].$enteringCustomActions[0].settings.source = buildText(data);
 
     const onSaveFile = () => {
+        ReactGA.event({
+            category: 'Customer service template generator',
+            action: 'Download Template',
+            label: 'Template'
+          });
+
+
         var blob = new Blob([JSON.stringify(template)], { type: "application/json;charset=utf-8" });
         FileSaver.saveAs(blob, "customer-service-template.json");
     }
