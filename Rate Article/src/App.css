@@ -1,0 +1,32 @@
+.App {
+  text-align: center;
+}
+
+.main-frame {
+   background: #DAF2F4; 
+  /* opacity: 0.3; */
+  padding: 8%;
+  font-size: 2.0vw;
+}
+
+.main-frame-text {
+  display: inline;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: bold;
+  /* font-size: 60px; */
+  line-height: 120%;
+  margin-right: 2%;
+  color: #607B99;
+}
+
+.main-frame img {
+  width: 8%;
+  margin-right: 2%;
+  /* vertical-align: -37px; */
+  vertical-align:middle
+}
+
+.button-frame{
+  display: inline;
+}
