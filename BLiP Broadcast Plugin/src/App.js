@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react"
 import "blip-toolkit/dist/blip-toolkit.css"
-import { getApplication, getLists, createList, getMembers, removeMember, getContacts, addMember } from "./api/applicationService"
+import {
+    getApplication, getLists, createList, getMembers, removeMemberCollection,
+    getContacts, deleteCollectionLists, addMemberCollection
+} from "./api/applicationService"
 import { withLoading } from "./api/commomService"
 import { PageHeader } from "components/PageHeader"
 import { CommonProvider } from "contexts/CommonContext"
@@ -35,6 +38,9 @@ function App() {
     }
 
     const applyContactsPagination = async (index) => {
+        if (members.total / 20 >= index)
+            applyMembersPagination(index)
+
         withLoading(async () => { setContacts(await getContacts(index, filter)); })
         setContactsPagination(index);
     }
@@ -48,6 +54,7 @@ function App() {
     }
 
     const handleListSelection = async (event) => {
+
         setListSelected(event.target.value);
         withLoading(async () => {
             setMembers(await getMembers(event.target.value, 0));
@@ -57,17 +64,18 @@ function App() {
         setMembersPagination(0);
     }
 
-    const handleAdd = async (contact) => {
+    const handleAdd = async (contacts) => {
+
         withLoading(async () => {
-            await addMember(listSelected, contact);
+            await addMemberCollection(listSelected, contacts);
             setMembers(await getMembers(listSelected, membersPagination));
             setContacts((await getContacts(contactsPagination)));
         })
     }
 
-    const handleRemoveMember = async (member) => {
+    const handleRemoveMembers = async (members) => {
         withLoading(async () => {
-            await removeMember(listSelected, member);
+            await removeMemberCollection(listSelected, members);
             setMembers(await getMembers(listSelected, membersPagination));
         })
     }
@@ -79,6 +87,14 @@ function App() {
             setLists(await getLists());
         })
     }
+    const deleteLists = (lists) => {
+        withLoading(async () => {
+            await deleteCollectionLists(lists);
+            setLists(await getLists());
+        })
+
+    }
+
 
     const fetchApi = async () => {
         setLists(await getLists())
@@ -104,48 +120,48 @@ function App() {
                         <ul className="bp-tab-nav">
                             <li>
                                 {/* eslint-disable-next-line */}
-                                <a href="#" data-ref="lists">Gerenciar Listas</a>
+                                <a href="#" data-ref="lists">Manage Lists</a>
                             </li>
                             <li>
                                 {/* eslint-disable-next-line */}
-                                <a href="#" data-ref="members">Gerenciar Membros</a>
+                                <a href="#" data-ref="members">Manage Members</a>
                             </li>
                             <li>
                                 {/* eslint-disable-next-line */}
-                                <a href="#" data-ref="contacts">Gerenciar Contatos</a>
+                                <a href="#" data-ref="contacts">Manage Contacts</a>
                             </li>
                         </ul>
                         <div className="bp-tab-content fl w-100" data-ref="lists">
                             <ListForm handleSubmit={handleAddList} />
-                            <ListsTable data={lists} />
+                            <hr />
+                            <ListsTable data={lists} deleteLists={deleteLists} />
                         </div>
                         <div className="bp-tab-content fl w-100" data-ref="members">
                             <ListSelect data={lists} handleSelection={handleListSelection} listSelected={listSelected} />
-                            <br /><br />
-                            {listSelected !== '' && listSelected !== 'Selecione uma lista' ?
+                            <hr />
+                            {listSelected !== '' && listSelected !== 'Selecione uma lista' &&
                                 (<MembersTable
                                     data={members.items}
                                     total={members.total}
                                     pagination={membersPagination}
                                     setPagination={applyMembersPagination}
-                                    handleRemove={handleRemoveMember} />)
-                                : (<></>)
+                                    handleRemove={handleRemoveMembers} />)
+
                             }
                         </div>
                         <div className="bp-tab-content fl w-100" data-ref="contacts">
                             <ListSelect data={lists} handleSelection={handleListSelection} listSelected={listSelected} />
-                            <br /><br />
-                            {listSelected !== '' && listSelected !== 'Selecione uma lista' ?
-                                (
-                                    <ContactTable
-                                        total={contacts.total}
-                                        data={contacts.items}
-                                        minus={members.items}
-                                        filter={applyFilter}
-                                        pagination={contactsPagination}
-                                        setPagination={applyContactsPagination}
-                                        handleAdd={handleAdd} />)
-                                : (<></>)}
+                            <hr />
+                            {listSelected !== '' && listSelected !== 'Selecione uma lista' &&
+                                (<ContactTable
+                                    total={contacts.total}
+                                    data={contacts.items}
+                                    minus={members.items}
+                                    filter={applyFilter}
+                                    pagination={contactsPagination}
+                                    setPagination={applyContactsPagination}
+                                    handleAdd={handleAdd} />)
+                            }
 
                         </div>
                     </div>

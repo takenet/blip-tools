@@ -1,18 +1,18 @@
-
 import React from "react"
 import { Modal, Table } from "react-bootstrap"
+import PropTypes from 'prop-types'
 
-function ModalView(props) {
-
+function ModalView({ data, position, display, handleClose }) {
+    position -= 200;
     const Extras = () => {
         let items = [];
-        if (props.data.extras !== undefined) {
-            const keys = Object.keys(props.data.extras);
+        if (data.extras !== undefined) {
+            const keys = Object.keys(data.extras);
             keys.forEach(key => {
                 items.push(
                     <tr key={key}>
                         <td><b>{key}</b></td>
-                        <td>{props.data.extras[key]}</td>
+                        <td>{data.extras[key]}</td>
                     </tr>
                 );
 
@@ -24,28 +24,28 @@ function ModalView(props) {
 
 
     return (
-        <Modal show={props.display} onHide={props.handleClose} centered>
+        <Modal style={{ paddingTop: position }} show={display} onHide={handleClose} >
             <Modal.Header closeButton>
-                <h3>Informações do contato</h3>
+                <h3>Contact information</h3>
             </Modal.Header>
             <Modal.Body>
                 <Table striped bordered hover>
                     <tbody>
                         <tr>
-                            <td><b>Id do Usuário</b></td>
-                            <td>{props.data.identity}</td>
+                            <td><b>Identity</b></td>
+                            <td>{data.identity}</td>
                         </tr>
                         <tr>
-                            <td><b>Nome</b></td>
-                            <td>{props.data.name}</td>
+                            <td><b>Name</b></td>
+                            <td>{data.name}</td>
                         </tr>
                         <tr>
-                            <td><b>Origem</b></td>
-                            <td>{props.data.source}</td>
+                            <td><b>Source</b></td>
+                            <td>{data.source}</td>
                         </tr>
                         <tr>
-                            <td><b>Grupo</b></td>
-                            <td>{props.data.group}</td>
+                            <td><b>Group</b></td>
+                            <td>{data.group}</td>
                         </tr>
                         <Extras />
                     </tbody>
@@ -56,4 +56,11 @@ function ModalView(props) {
 }
 
 
-export default ModalView
+ModalView.propTypes = {
+    data: PropTypes.arrayOf(Object).isRequired,
+    position: PropTypes.number.isRequired,
+    display: PropTypes.bool.isRequired,
+    handleClose: PropTypes.func.isRequired,
+}
+
+export default ModalView 

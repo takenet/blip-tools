@@ -1,20 +1,38 @@
-import React from "react"
-import { Button, Pagination, Table, Alert } from 'react-bootstrap';
+import React, { useState } from "react"
+import { Button, Pagination } from 'react-bootstrap';
 import { FiUserMinus } from 'react-icons/fi';
-import { countIndex } from '../util';
+import { countIndex, formatArrayToJson, sortData } from '../util';
+import { BlipTable } from "components/BlipTable";
+import PropTypes from 'prop-types';
 
-function MembersTable(props) {
-    const members = props.data;
+
+const tableModel = [
+    { label: "#", key: "num" },
+    { label: "Name", key: "name" },
+];
+
+
+function MembersTable({ data, total, pagination, setPagination, handleRemove }) {
+
+
+    const members = formatArrayToJson(data, pagination);
+
+    const [sort, setSort] = useState(
+        { property: "num", order: "asc" },
+        { property: "name", order: "asc" }
+    );
+    const [selected, setSeleted] = useState([]);
 
     const handlePagination = (index) => {
-        props.setPagination(index);
+        setPagination(index);
     }
+
     const Items = () => {
         let items = [];
-        if (countIndex(props.total) > 1) {
-            for (let index = 0; index < countIndex(props.total); index++) {
+        if (countIndex(total) > 1) {
+            for (let index = 0; index < countIndex(total); index++) {
                 items.push(
-                    <Pagination.Item key={index + 1} active={index + 1 === (props.pagination + 1)} onClick={() => { handlePagination(index) }}>
+                    <Pagination.Item key={index + 1} active={index + 1 === (pagination + 1)} onClick={() => { handlePagination(index) }}>
                         {index + 1}
                     </Pagination.Item> ,
                 );
@@ -24,39 +42,22 @@ function MembersTable(props) {
     }
     return (
         <div >
-            <br /> <br />
-            <p>Todos Membros</p>
-            <Table striped bordered hover>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Nome</th>
-                        <th>Ações</th>
+            <h5>Members</h5>
+            <BlipTable
+                idKey="num"
+                model={tableModel}
+                data={members}
+                onItemSelect={(item) => setSeleted(item)}
+                canSelect={true}
+                sort={sort}
+                onSortSet={(item) => { sortData(members, item) }}
+                bodyHeight="1300px"
+                selectedItems={selected}
+                actions={[<Button variant="danger" onClick={() => { handleRemove(selected); setSeleted([]) }}><FiUserMinus /> Remove</Button>]}
+            />
 
-                    </tr>
-                </thead>
-                <tbody>
-                    {members.map((item, i) => {
-                        return (
-                            <tr key={i}>
-                                <td>{(props.pagination * 20) + i + 1}</td>
-                                <td>{item}</td>
-                                <td><Button variant="danger" style={{ display: 'block', margin: 'auto' }} onClick={() => props.handleRemove(item)}> <FiUserMinus /> Retirar</Button></td>
-                            </tr>
-                        )
-                    })}
-                    {members.length === 0 ?
-                        <td colSpan="3" style={{ background: 'gray', textDecorationColor: 'white', textAlign: 'center' }}>
-                            Sem registros
-                        </td>
-                        :
-                        <></>
-                    }
-                </tbody>
-            </Table>
 
             <div className="float-right">
-
                 < Pagination >
                     <Items />
                 </Pagination>
@@ -65,5 +66,11 @@ function MembersTable(props) {
         </div>
     );
 }
-
+MembersTable.propTypes = {
+    data: PropTypes.array.isRequired,
+    total: PropTypes.number.isRequired,
+    pagination: PropTypes.number.isRequired,
+    setPagination: PropTypes.func.isRequired,
+    handleRemove: PropTypes.func.isRequired,
+}
 export default MembersTable

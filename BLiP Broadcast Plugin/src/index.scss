@@ -43,3 +43,49 @@ a {
 .w6 {
   width: 24rem;
 }
+.pagination{
+  margin-top: 15px;
+}
+.page-link {
+  color: #28b4c3 !important ;
+}
+.page-item.active .page-link {
+  background-color: #28b4c3 !important ;
+  border-color: #51dbe3  !important;
+  color: white !important ;
+}
+
+.btn-primary {
+  background-color: #28b4c3 !important;
+  border-color: #51dbe3 !important;
+}
+
+.badge-info {
+  background-color: #28b4c3;
+}
+
+.badge-success {
+  background-color: #4dcb7b !important;
+}
+
+.btn-success {
+  background-color: #4dcb7b !important;
+  border-color: #4dcb7b !important;
+}
+.medium-padding-bottom{
+padding-bottom: 5px;
+}
+.medium-padding-top{
+padding-top: 5px;
+}
+.btn-danger {
+  background-color: #ff363e !important;
+  border-color: #ff5a60 !important;
+}
+.items-index{
+     margin-bottom: 0 !important; 
+}
+.card-header {
+  background-color: #28b4c3 !important;
+  color: white !important;
+}

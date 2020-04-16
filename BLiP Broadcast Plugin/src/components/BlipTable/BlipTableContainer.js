@@ -10,13 +10,17 @@ const BlipTableContainer = ({
   idKey = 'id',
   onItemSelect,
   onSortSet,
+  sort = { property: "", order: "" },
   canSelect = false,
+  canSort = true,
   actions,
+  onItemClick = () => { },
   emptyMessage,
   selectedItems,
   bodyHeight = '200px',
 }) => {
-  const [currentSort, setCurrentSort] = useState({ property: '', order: '' })
+  const [currentSort, setCurrentSort] = useState(sort);
+
 
   const content = useContentLocalizer(localization)
 
@@ -68,9 +72,11 @@ const BlipTableContainer = ({
     toggleSelect={toggleSelect}
     toggleSelectAll={toggleSelectAll}
     canSelect={canSelect}
+    canSort={canSort}
     currentSort={currentSort}
     setSort={setSort}
     content={content}
+    onItemClick={onItemClick}
     actions={actions}
     emptyMessage={emptyMessage || content.emptyMessage}
     isAllSelected={isAllSelected}
@@ -84,8 +90,11 @@ BlipTableContainer.propTypes = {
   idKey: PropTypes.string,
   onItemSelect: PropTypes.func,
   onSortSet: PropTypes.func,
+  sort: PropTypes.object,
+  canSort: PropTypes.bool,
   canSelect: PropTypes.bool,
   actions: PropTypes.arrayOf(PropTypes.node),
+  onItemClick: PropTypes.func,
   emptyMessage: PropTypes.string,
   selectedItems: PropTypes.arrayOf(Object).isRequired,
   bodyHeight: PropTypes.string,

@@ -1,7 +1,7 @@
 export const localization =  {
   pt: {
-    selected: 'selecionado(s)',
-    emptyMessage: 'Não há dados',
+    selected: 'selected',
+    emptyMessage: 'No data',
   },
   en: {
     selected: 'selected',

@@ -2,26 +2,14 @@ import { IframeMessageProxy } from 'iframe-message-proxy'
 import { generateLineFilter, generateLinePagination } from '../util';
 import { errorToast, successToast } from '../toastUtil';
 
+const DEFAULT_DATA = { total: 0, items: [] };
+
 export const getApplication = async () => {
     const { response: application } = await IframeMessageProxy.sendMessage({
         action: 'getApplication',
     })
     return application
 }
-/*
-const applyDateMessagesFilter = async (items, filter) => {
-    let data = items;
-    if(items !== undefined){
-    data = items.filter(async (a, b) => {
-        if (verifyRange(filter, await getLastMessages(a.identity))) {
-            return a
-        }
-    })}
-    console.log("items", items)
-    return data;
-}
-*/
-
 export const getContacts = async (pagination, filter) => {
     try {
         const { response } = await IframeMessageProxy.sendMessage({
@@ -30,20 +18,19 @@ export const getContacts = async (pagination, filter) => {
                 destination: 'MessagingHubService',
                 command: {
                     method: 'get',
-                    uri: '/contacts' + generateLinePagination(pagination*20) + generateLineFilter(filter)
+                    uri: '/contacts' + generateLinePagination(pagination * 20) + generateLineFilter(filter)
                 }
             }
         })
-        
+
         return response
 
     } catch (error) {
-        errorToast("Erro ao carregar contatos " + error)
-        return { total: 0, items: [] };
+        errorToast("Error loading contacts")
+        return DEFAULT_DATA;
 
     }
 }
-
 export const createList = async (newListName) => {
     try {
         const response = await IframeMessageProxy.sendMessage({
@@ -56,55 +43,104 @@ export const createList = async (newListName) => {
                     uri: '/lists',
                     to: 'postmaster@broadcast.msging.net',
                     resource: {
-                        identity: newListName + "@broadcast.msging.net"
+                        identity: `${newListName}@broadcast.msging.net`
                     }
                 }
             }
         })
 
-        successToast(newListName + " adicionada");
+        successToast(`${newListName} added`);
         return response;
 
     } catch (error) {
-        errorToast("Erro ao criar lista " + error)
+        errorToast("Error creating list ")
         return;
     }
 
 
 }
-
-export const removeMember = async (list, member) => {
+export const deleteCollectionLists = async (lists) => {
+    let count = 0;
+    for (const element of lists) {
+        count += await deleteList(element.name);
+    }
+    successToast(`${count} lists removed`);
+}
+ const deleteList = async (list) => {
+    list = encodeURI(list);
     try {
-        const response = await IframeMessageProxy.sendMessage({
+        await IframeMessageProxy.sendMessage({
+            action: 'sendCommand',
+            content: {
+                destination: 'MessagingHubService',
+                command: {
+                    to: "postmaster@broadcast.msging.net",
+                    method: "delete",
+                    uri: `/lists/${list}`
+
+                }
+            }
+        })
+
+
+        return 1;
+
+    } catch (error) {
+        errorToast("Error deleting list")
+        return;
+    }
+
+
+}
+export const removeMemberCollection = async (list, members) => {
+    let count = 0;
+    for (const element of members) {
+        count += await removeMember(list, element.name);
+    }
+    successToast(`${count} members removed from ${list}`);
+}
+const removeMember = async (list, member) => {
+    list = encodeURI(list);
+    member = encodeURI(member);
+    try {
+        await IframeMessageProxy.sendMessage({
             action: 'sendCommand',
             content: {
                 destination: 'MessagingHubService',
                 command: {
                     method: 'delete',
-                    uri: "/lists/" + list + "/recipients/" + member,
+                    uri: `/lists/${list}/recipients/${member}`,
                     to: 'postmaster@broadcast.msging.net'
                 }
             }
         })
 
-        successToast(member + " removido na lista" + list);
-        return response
+
+        return 1;
 
     } catch (error) {
-        errorToast("Erro ao remover membros na listas " + error);
+        errorToast(`Error removing ${member} from list`);
         return;
     }
 }
+export const addMemberCollection = async (list, contacts) => {
+    let count = 0;
+    for (const element of contacts) {
+        count += await addMember(list, element.identity);
+    }
 
-export const addMember = async (list, contact) => {
+    successToast(`${count} contacts added into ${list}`);
+}
+const addMember = async (list, contact) => {
+    list = encodeURI(list);
     try {
-        const response = await IframeMessageProxy.sendMessage({
+        await IframeMessageProxy.sendMessage({
             action: 'sendCommand',
             content: {
                 destination: 'MessagingHubService',
                 command: {
                     method: 'set',
-                    uri: "/lists/" + list + "/recipients",
+                    uri: `/lists/${list}/recipients`,
                     to: 'postmaster@broadcast.msging.net',
                     type: "application/vnd.lime.identity",
                     resource: contact
@@ -112,17 +148,15 @@ export const addMember = async (list, contact) => {
             }
         })
 
-        successToast(contact + " adicionado na lista " + list);
-        return response;
+        return 1;
 
     } catch (error) {
-        errorToast("Erro ao adicionar membros na listas " + error);
+        errorToast(`Error adding ${contact} into ${list}`);
         return;
     }
 
 
 }
-
 export const getLists = async () => {
     try {
         const { response: { items } } = await IframeMessageProxy.sendMessage({
@@ -139,7 +173,7 @@ export const getLists = async () => {
 
         return items;
     } catch (error) {
-        errorToast("Erro ao carregar informações de listas " + error);
+        errorToast("Error loading lists");
         return [];
     }
 
@@ -147,7 +181,7 @@ export const getLists = async () => {
 
 }
 export const getMembers = async (list, pagination) => {
-    
+    list = encodeURI(list);
     try {
         const { response } = await IframeMessageProxy.sendMessage({
             action: 'sendCommand',
@@ -155,39 +189,16 @@ export const getMembers = async (list, pagination) => {
                 destination: 'MessagingHubService',
                 command: {
                     method: 'get',
-                    uri: '/lists/' + list + '/recipients' +  generateLinePagination(pagination*20),
+                    uri: `/lists/${list}/recipients` + generateLinePagination(pagination * 20),
                     to: 'postmaster@broadcast.msging.net'
                 }
             }
         })
-        
+
         return response;
     } catch (error) {
-        errorToast("Erro ao carregar informações de membros da lista " + list + " " + error);
-        return { total: 0, items: [] };
+        errorToast(`Error loading member from ${list}`);
+        return DEFAULT_DATA;
     }
 
 }
-
-
-// export const getLastMessages = async (contact) => {
-//     try {
-//         const { response: { items } } = await IframeMessageProxy.sendMessage({
-//             action: 'sendCommand',
-//             content: {
-//                 destination: 'MessagingHubService',
-//                 command: {
-//                     method: 'get',
-//                     uri: '/threads/' + contact
-//                 }
-//             }
-//         })
-
-//         return items
-//     } catch (error) {
-//         console.log("Erro getLastMessages " + error)
-//         return [];
-//     }
-
-// }
-

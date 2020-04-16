@@ -6,8 +6,9 @@ const Sorter = ({
   property,
   currentSort,
   setSort,
+  canSort
 }) => {
-  return <div className="ordinator flex flex-column justify-center mr2 pointer" onClick={() => setSort({ property, order: currentSort.property === property && currentSort.order === 'asc' ? 'desc' : 'asc' })}>
+  return <div style={canSort ? { display: '' } : { display: 'none' }} className="ordinator flex flex-column justify-center mr2 pointer" onClick={() => setSort({ property, order: currentSort.property === property && currentSort.order === 'asc' ? 'desc' : 'asc' })}>
     <span className={`arrow asc mb1 ${currentSort.property === property && currentSort.order === 'asc' ? 'active' : ''}`} ></span>
     <span className={`arrow desc ${currentSort.property === property && currentSort.order === 'desc' ? 'active' : ''}`} ></span>
   </div>
@@ -18,6 +19,7 @@ Sorter.propTypes = {
   property: PropTypes.string.isRequired,
   currentSort: PropTypes.object,
   setSort: PropTypes.func.isRequired,
+  canSort: PropTypes.bool,
 }
 
 const BlipTableComponent = ({
@@ -29,11 +31,13 @@ const BlipTableComponent = ({
   toggleSelectAll,
   canSelect,
   currentSort,
+  canSort,
   setSort,
   content,
   actions,
+  onItemClick,
   emptyMessage,
-  isAllSelected,  
+  isAllSelected,
   bodyHeight,
 }) => {
   return <table className="bp-table w-100 tl bp-table--scroll-y ">
@@ -49,9 +53,9 @@ const BlipTableComponent = ({
               <div className="flex items-center">
                 {
                   !property.notSortable &&
-                  <Sorter property={property.key} currentSort={currentSort} setSort={setSort} />
+                  <Sorter canSort={canSort} property={property.key} currentSort={currentSort} setSort={setSort} />
                 }
-                <p>{property.label}</p>
+                <p  className="items-index" >{property.label}</p>
               </div>
             </th>
           )
@@ -86,7 +90,7 @@ const BlipTableComponent = ({
 
                 {
                   model.map(
-                    property => <td key={property.key + item[idKey]} title={item[property.key]}>{item[property.key]}</td>
+                    property => <td key={property.key + item[idKey]} title={item[property.key]} onClick={(e) => {  onItemClick(e, item) }}>{item[property.key]}</td>
                   )
 
                 }
@@ -113,10 +117,12 @@ BlipTableComponent.propTypes = {
   toggleSelect: PropTypes.func.isRequired,
   toggleSelectAll: PropTypes.func.isRequired,
   canSelect: PropTypes.bool,
+  canSort: PropTypes.bool,
   currentSort: PropTypes.object,
   setSort: PropTypes.func.isRequired,
   content: PropTypes.object.isRequired,
   actions: PropTypes.arrayOf(PropTypes.node),
+  onItemClick: PropTypes.func,
   emptyMessage: PropTypes.string.isRequired,
   isAllSelected: PropTypes.func.isRequired,
   bodyHeight: PropTypes.string.isRequired,
