@@ -1,30 +1,22 @@
-# BLiP Broadcast Plugin
+# BLiP Contact Plugin
 
- This is a BLiP example plugin made to help users manage distribution lists with ease.
+ This is a BLiP example plugin made to help users manage to add and update contacts with ease.
 
- Visit the sample [page here](https://blip-broadcast-plugin.netlify.com/).
+ Visit the sample [page here](https://blip-contact-plugin.netlify.com/).
  
  ## What is possible to do with this plugin
  
- ### Distribution Lists
- 1. See all the distribution lists of the bot.
- 2. Add new lists.
+ ### Add/Update a single contact 
+Just the field identity is required.
  
- ![Manage List](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast1.png)
- 
- ### Members
- 
- 1. See all the members' distribution list. 
- 2. Remove a member from a distribution list.
- 
- ![Manage members](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast2.png)
+ ![Manage List](https://github.com/takenet/blip-tools/blob/master/BLiP%20Contact%20Plugin/images/img1.png)
  
  ### Contacts
  
  1. See all the contacts' bot.
- 2. Add contacts into the selected distribution list.
+ 2. Export all the selected contacts into a .csv file.
  
- ![Manage contacts](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast3.png)
+ ![Manage contacts](https://github.com/takenet/blip-tools/blob/master/BLiP%20Contact%20Plugin/images/img2.png)
  
  3. Filter all the contacts' bot by:
 * Name
@@ -34,10 +26,9 @@
 * Id
 * Extras
 
-![Filter contacts](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast4.png)
+![Filter contacts](https://github.com/takenet/blip-tools/blob/master/BLiP%20Contact%20Plugin/images/img3.png)
 
  4. See all contact information.
-  ![See all contact information](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast5.png)
   
 
 ## Connecting the plugin to your bot
@@ -48,19 +39,18 @@
  **Value**: 
  ```json
 { 
-   "broadcast-plugin":{ 
-      "name":"Broadcast Plugin",
-      "url":"https://blip-broadcast-plugin.netlify.com/"
+   "contact-plugin":{ 
+      "name":"Contact Plugin",
+      "url":"https://blip-contact-plugin.netlify.com/"
    }
 }
 
 ```
-See the result below:
-![Define information in advanced settings](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/advanced_configuration.png)
+
 
 3. Access the following path shown below to use the plugin:
 
-![Path to access the plugin](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/img2.png)
+![Path to access the plugin](https://github.com/takenet/blip-tools/blob/master/BLiP%20Contact%20Plugin/images/img2.png)
 
 ## Getting started from this project
 
