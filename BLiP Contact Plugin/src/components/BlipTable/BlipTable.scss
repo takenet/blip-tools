@@ -1,0 +1,47 @@
+@import "../../globals";
+
+.bp-table {
+  thead>tr{
+    margin: 0 !important;
+  }
+  .arrow{
+    width: 0;
+    height: 0;
+    flex-shrink: 0;
+    flex-grow: 0;
+    display: block;
+    border-top-width: .325em;
+    border-right-width: .35em;
+    border-bottom-width: .325em;
+    border-left-width: .35em;
+    border-style: solid;
+    border-color: transparent;
+    &.desc{
+      border-top-color: $bp-color-silver;    
+      &.active{
+        border-top-color: $bp-color-onix;
+      }
+    }
+    &.asc{
+      border-bottom-color: $bp-color-silver;
+      &.active{
+        border-bottom-color: $bp-color-onix;
+      }
+    }
+  }
+  
+  
+  tr.selected {
+    &:nth-child(even) {
+      background-color: rgba($bp-color-blip-light, .3);
+    }
+    &:nth-child(odd) {
+      background-color: rgba($bp-color-blip-light, .2);
+    }
+  }
+
+  td{
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

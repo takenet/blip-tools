@@ -1,0 +1,1922 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing BlipTable Should allow show all items are selected 1`] = `
+<BlipTableContainer
+  canSelect={true}
+  data={
+    Array [
+      Object {
+        "id": 1,
+        "p": "p1",
+        "s": "s1",
+      },
+      Object {
+        "id": 2,
+        "p": "p2",
+        "s": "s2",
+      },
+      Object {
+        "id": 3,
+        "p": "p3",
+        "s": "s3",
+      },
+    ]
+  }
+  model={
+    Array [
+      Object {
+        "key": "p",
+        "label": "Primeira coluna",
+      },
+      Object {
+        "key": "s",
+        "label": "Segunda coluna",
+      },
+    ]
+  }
+  selectedItems={
+    Array [
+      Object {
+        "id": 1,
+        "p": "p1",
+        "s": "s1",
+      },
+      Object {
+        "id": 2,
+        "p": "p2",
+        "s": "s2",
+      },
+      Object {
+        "id": 3,
+        "p": "p3",
+        "s": "s3",
+      },
+    ]
+  }
+>
+  <BlipTableComponent
+    bodyHeight="200px"
+    canSelect={true}
+    content={
+      Object {
+        "emptyMessage": "Não há dados",
+        "selected": "selecionado(s)",
+      }
+    }
+    currentSort={
+      Object {
+        "order": "",
+        "property": "",
+      }
+    }
+    data={
+      Array [
+        Object {
+          "id": 1,
+          "p": "p1",
+          "s": "s1",
+        },
+        Object {
+          "id": 2,
+          "p": "p2",
+          "s": "s2",
+        },
+        Object {
+          "id": 3,
+          "p": "p3",
+          "s": "s3",
+        },
+      ]
+    }
+    emptyMessage="Não há dados"
+    idKey="id"
+    isAllSelected={[Function]}
+    model={
+      Array [
+        Object {
+          "key": "p",
+          "label": "Primeira coluna",
+        },
+        Object {
+          "key": "s",
+          "label": "Segunda coluna",
+        },
+      ]
+    }
+    selectedItems={
+      Array [
+        Object {
+          "id": 1,
+          "p": "p1",
+          "s": "s1",
+        },
+        Object {
+          "id": 2,
+          "p": "p2",
+          "s": "s2",
+        },
+        Object {
+          "id": 3,
+          "p": "p3",
+          "s": "s3",
+        },
+      ]
+    }
+    setSort={[Function]}
+    toggleSelect={[Function]}
+    toggleSelectAll={[Function]}
+  >
+    <table
+      className="bp-table w-100 tl bp-table--scroll-y "
+    >
+      <thead
+        className="bp-c-desk"
+      >
+        <tr
+          className="w-100"
+        >
+          <th
+            className="w3"
+          >
+            <BlipCheckBoxComponent
+              checked={true}
+              toggleCheck={[Function]}
+            >
+              <label
+                className="bp-input--check--wrapper"
+              >
+                <input
+                  checked={true}
+                  className="bp-input"
+                  name="checkbox-group"
+                  onChange={[Function]}
+                  type="checkbox"
+                />
+                <div
+                  className="bp-input--checkbox"
+                >
+                  ✓
+                </div>
+              </label>
+            </BlipCheckBoxComponent>
+          </th>
+          <th
+            key="p"
+          >
+            <div
+              className="flex items-center"
+            >
+              <Sorter
+                currentSort={
+                  Object {
+                    "order": "",
+                    "property": "",
+                  }
+                }
+                property="p"
+                setSort={[Function]}
+              >
+                <div
+                  className="ordinator flex flex-column justify-center mr2 pointer"
+                  onClick={[Function]}
+                >
+                  <span
+                    className="arrow asc mb1 "
+                  />
+                  <span
+                    className="arrow desc "
+                  />
+                </div>
+              </Sorter>
+              <p>
+                Primeira coluna
+              </p>
+            </div>
+          </th>
+          <th
+            key="s"
+          >
+            <div
+              className="flex items-center"
+            >
+              <Sorter
+                currentSort={
+                  Object {
+                    "order": "",
+                    "property": "",
+                  }
+                }
+                property="s"
+                setSort={[Function]}
+              >
+                <div
+                  className="ordinator flex flex-column justify-center mr2 pointer"
+                  onClick={[Function]}
+                >
+                  <span
+                    className="arrow asc mb1 "
+                  />
+                  <span
+                    className="arrow desc "
+                  />
+                </div>
+              </Sorter>
+              <p>
+                Segunda coluna
+              </p>
+            </div>
+          </th>
+          <th
+            className="w5"
+          >
+            <div
+              className="selectedItems flex justify-around items-center "
+            >
+              <p
+                className="nowrap"
+              >
+                3
+                 
+                selecionado(s)
+              </p>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        style={
+          Object {
+            "maxHeight": "200px",
+          }
+        }
+      >
+        <tr
+          className="selected"
+          key="1"
+        >
+          <td
+            className="w3"
+          >
+            <BlipCheckBoxComponent
+              checked={true}
+              toggleCheck={[Function]}
+            >
+              <label
+                className="bp-input--check--wrapper"
+              >
+                <input
+                  checked={true}
+                  className="bp-input"
+                  name="checkbox-group"
+                  onChange={[Function]}
+                  type="checkbox"
+                />
+                <div
+                  className="bp-input--checkbox"
+                >
+                  ✓
+                </div>
+              </label>
+            </BlipCheckBoxComponent>
+          </td>
+          <td
+            key="p1"
+            title="p1"
+          >
+            p1
+          </td>
+          <td
+            key="s1"
+            title="s1"
+          >
+            s1
+          </td>
+          <td
+            className="w5"
+          />
+        </tr>
+        <tr
+          className="selected"
+          key="2"
+        >
+          <td
+            className="w3"
+          >
+            <BlipCheckBoxComponent
+              checked={true}
+              toggleCheck={[Function]}
+            >
+              <label
+                className="bp-input--check--wrapper"
+              >
+                <input
+                  checked={true}
+                  className="bp-input"
+                  name="checkbox-group"
+                  onChange={[Function]}
+                  type="checkbox"
+                />
+                <div
+                  className="bp-input--checkbox"
+                >
+                  ✓
+                </div>
+              </label>
+            </BlipCheckBoxComponent>
+          </td>
+          <td
+            key="p2"
+            title="p2"
+          >
+            p2
+          </td>
+          <td
+            key="s2"
+            title="s2"
+          >
+            s2
+          </td>
+          <td
+            className="w5"
+          />
+        </tr>
+        <tr
+          className="selected"
+          key="3"
+        >
+          <td
+            className="w3"
+          >
+            <BlipCheckBoxComponent
+              checked={true}
+              toggleCheck={[Function]}
+            >
+              <label
+                className="bp-input--check--wrapper"
+              >
+                <input
+                  checked={true}
+                  className="bp-input"
+                  name="checkbox-group"
+                  onChange={[Function]}
+                  type="checkbox"
+                />
+                <div
+                  className="bp-input--checkbox"
+                >
+                  ✓
+                </div>
+              </label>
+            </BlipCheckBoxComponent>
+          </td>
+          <td
+            key="p3"
+            title="p3"
+          >
+            p3
+          </td>
+          <td
+            key="s3"
+            title="s3"
+          >
+            s3
+          </td>
+          <td
+            className="w5"
+          />
+        </tr>
+      </tbody>
+    </table>
+  </BlipTableComponent>
+</BlipTableContainer>
+`;
+
+exports[`Testing BlipTable Should allow to select items 1`] = `
+<BlipTableContainer
+  canSelect={true}
+  data={
+    Array [
+      Object {
+        "id": 1,
+        "p": "p1",
+        "s": "s1",
+      },
+      Object {
+        "id": 2,
+        "p": "p2",
+        "s": "s2",
+      },
+      Object {
+        "id": 3,
+        "p": "p3",
+        "s": "s3",
+      },
+    ]
+  }
+  model={
+    Array [
+      Object {
+        "key": "p",
+        "label": "Primeira coluna",
+      },
+      Object {
+        "key": "s",
+        "label": "Segunda coluna",
+      },
+    ]
+  }
+  selectedItems={
+    Array [
+      Object {
+        "id": 1,
+        "p": "p1",
+        "s": "s1",
+      },
+      Object {
+        "id": 2,
+        "p": "p2",
+        "s": "s2",
+      },
+    ]
+  }
+>
+  <BlipTableComponent
+    bodyHeight="200px"
+    canSelect={true}
+    content={
+      Object {
+        "emptyMessage": "Não há dados",
+        "selected": "selecionado(s)",
+      }
+    }
+    currentSort={
+      Object {
+        "order": "",
+        "property": "",
+      }
+    }
+    data={
+      Array [
+        Object {
+          "id": 1,
+          "p": "p1",
+          "s": "s1",
+        },
+        Object {
+          "id": 2,
+          "p": "p2",
+          "s": "s2",
+        },
+        Object {
+          "id": 3,
+          "p": "p3",
+          "s": "s3",
+        },
+      ]
+    }
+    emptyMessage="Não há dados"
+    idKey="id"
+    isAllSelected={[Function]}
+    model={
+      Array [
+        Object {
+          "key": "p",
+          "label": "Primeira coluna",
+        },
+        Object {
+          "key": "s",
+          "label": "Segunda coluna",
+        },
+      ]
+    }
+    selectedItems={
+      Array [
+        Object {
+          "id": 1,
+          "p": "p1",
+          "s": "s1",
+        },
+        Object {
+          "id": 2,
+          "p": "p2",
+          "s": "s2",
+        },
+      ]
+    }
+    setSort={[Function]}
+    toggleSelect={[Function]}
+    toggleSelectAll={[Function]}
+  >
+    <table
+      className="bp-table w-100 tl bp-table--scroll-y "
+    >
+      <thead
+        className="bp-c-desk"
+      >
+        <tr
+          className="w-100"
+        >
+          <th
+            className="w3"
+          >
+            <BlipCheckBoxComponent
+              checked={false}
+              toggleCheck={[Function]}
+            >
+              <label
+                className="bp-input--check--wrapper"
+              >
+                <input
+                  checked={false}
+                  className="bp-input"
+                  name="checkbox-group"
+                  onChange={[Function]}
+                  type="checkbox"
+                />
+                <div
+                  className="bp-input--checkbox"
+                >
+                  ✓
+                </div>
+              </label>
+            </BlipCheckBoxComponent>
+          </th>
+          <th
+            key="p"
+          >
+            <div
+              className="flex items-center"
+            >
+              <Sorter
+                currentSort={
+                  Object {
+                    "order": "",
+                    "property": "",
+                  }
+                }
+                property="p"
+                setSort={[Function]}
+              >
+                <div
+                  className="ordinator flex flex-column justify-center mr2 pointer"
+                  onClick={[Function]}
+                >
+                  <span
+                    className="arrow asc mb1 "
+                  />
+                  <span
+                    className="arrow desc "
+                  />
+                </div>
+              </Sorter>
+              <p>
+                Primeira coluna
+              </p>
+            </div>
+          </th>
+          <th
+            key="s"
+          >
+            <div
+              className="flex items-center"
+            >
+              <Sorter
+                currentSort={
+                  Object {
+                    "order": "",
+                    "property": "",
+                  }
+                }
+                property="s"
+                setSort={[Function]}
+              >
+                <div
+                  className="ordinator flex flex-column justify-center mr2 pointer"
+                  onClick={[Function]}
+                >
+                  <span
+                    className="arrow asc mb1 "
+                  />
+                  <span
+                    className="arrow desc "
+                  />
+                </div>
+              </Sorter>
+              <p>
+                Segunda coluna
+              </p>
+            </div>
+          </th>
+          <th
+            className="w5"
+          >
+            <div
+              className="selectedItems flex justify-around items-center "
+            >
+              <p
+                className="nowrap"
+              >
+                2
+                 
+                selecionado(s)
+              </p>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        style={
+          Object {
+            "maxHeight": "200px",
+          }
+        }
+      >
+        <tr
+          className="selected"
+          key="1"
+        >
+          <td
+            className="w3"
+          >
+            <BlipCheckBoxComponent
+              checked={true}
+              toggleCheck={[Function]}
+            >
+              <label
+                className="bp-input--check--wrapper"
+              >
+                <input
+                  checked={true}
+                  className="bp-input"
+                  name="checkbox-group"
+                  onChange={[Function]}
+                  type="checkbox"
+                />
+                <div
+                  className="bp-input--checkbox"
+                >
+                  ✓
+                </div>
+              </label>
+            </BlipCheckBoxComponent>
+          </td>
+          <td
+            key="p1"
+            title="p1"
+          >
+            p1
+          </td>
+          <td
+            key="s1"
+            title="s1"
+          >
+            s1
+          </td>
+          <td
+            className="w5"
+          />
+        </tr>
+        <tr
+          className="selected"
+          key="2"
+        >
+          <td
+            className="w3"
+          >
+            <BlipCheckBoxComponent
+              checked={true}
+              toggleCheck={[Function]}
+            >
+              <label
+                className="bp-input--check--wrapper"
+              >
+                <input
+                  checked={true}
+                  className="bp-input"
+                  name="checkbox-group"
+                  onChange={[Function]}
+                  type="checkbox"
+                />
+                <div
+                  className="bp-input--checkbox"
+                >
+                  ✓
+                </div>
+              </label>
+            </BlipCheckBoxComponent>
+          </td>
+          <td
+            key="p2"
+            title="p2"
+          >
+            p2
+          </td>
+          <td
+            key="s2"
+            title="s2"
+          >
+            s2
+          </td>
+          <td
+            className="w5"
+          />
+        </tr>
+        <tr
+          className=""
+          key="3"
+        >
+          <td
+            className="w3"
+          >
+            <BlipCheckBoxComponent
+              checked={false}
+              toggleCheck={[Function]}
+            >
+              <label
+                className="bp-input--check--wrapper"
+              >
+                <input
+                  checked={false}
+                  className="bp-input"
+                  name="checkbox-group"
+                  onChange={[Function]}
+                  type="checkbox"
+                />
+                <div
+                  className="bp-input--checkbox"
+                >
+                  ✓
+                </div>
+              </label>
+            </BlipCheckBoxComponent>
+          </td>
+          <td
+            key="p3"
+            title="p3"
+          >
+            p3
+          </td>
+          <td
+            key="s3"
+            title="s3"
+          >
+            s3
+          </td>
+          <td
+            className="w5"
+          />
+        </tr>
+      </tbody>
+    </table>
+  </BlipTableComponent>
+</BlipTableContainer>
+`;
+
+exports[`Testing BlipTable Should render empty table and show message 1`] = `
+<BlipTableContainer
+  canSelect={false}
+  data={Array []}
+  model={
+    Array [
+      Object {
+        "key": "p",
+        "label": "Primeira coluna",
+      },
+      Object {
+        "key": "s",
+        "label": "Segunda coluna",
+      },
+    ]
+  }
+  selectedItems={Array []}
+>
+  <BlipTableComponent
+    bodyHeight="200px"
+    canSelect={false}
+    content={
+      Object {
+        "emptyMessage": "Não há dados",
+        "selected": "selecionado(s)",
+      }
+    }
+    currentSort={
+      Object {
+        "order": "",
+        "property": "",
+      }
+    }
+    data={Array []}
+    emptyMessage="Não há dados"
+    idKey="id"
+    isAllSelected={[Function]}
+    model={
+      Array [
+        Object {
+          "key": "p",
+          "label": "Primeira coluna",
+        },
+        Object {
+          "key": "s",
+          "label": "Segunda coluna",
+        },
+      ]
+    }
+    selectedItems={Array []}
+    setSort={[Function]}
+    toggleSelect={[Function]}
+    toggleSelectAll={[Function]}
+  >
+    <table
+      className="bp-table w-100 tl bp-table--scroll-y "
+    >
+      <thead
+        className="bp-c-desk"
+      >
+        <tr
+          className="w-100"
+        >
+          <th
+            key="p"
+          >
+            <div
+              className="flex items-center"
+            >
+              <Sorter
+                currentSort={
+                  Object {
+                    "order": "",
+                    "property": "",
+                  }
+                }
+                property="p"
+                setSort={[Function]}
+              >
+                <div
+                  className="ordinator flex flex-column justify-center mr2 pointer"
+                  onClick={[Function]}
+                >
+                  <span
+                    className="arrow asc mb1 "
+                  />
+                  <span
+                    className="arrow desc "
+                  />
+                </div>
+              </Sorter>
+              <p>
+                Primeira coluna
+              </p>
+            </div>
+          </th>
+          <th
+            key="s"
+          >
+            <div
+              className="flex items-center"
+            >
+              <Sorter
+                currentSort={
+                  Object {
+                    "order": "",
+                    "property": "",
+                  }
+                }
+                property="s"
+                setSort={[Function]}
+              >
+                <div
+                  className="ordinator flex flex-column justify-center mr2 pointer"
+                  onClick={[Function]}
+                >
+                  <span
+                    className="arrow asc mb1 "
+                  />
+                  <span
+                    className="arrow desc "
+                  />
+                </div>
+              </Sorter>
+              <p>
+                Segunda coluna
+              </p>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        style={
+          Object {
+            "maxHeight": "200px",
+          }
+        }
+      >
+        <tr
+          className="w-100 bp-bg-offwhite tc"
+        >
+          <td
+            className="bp-bg-offwhite"
+            colSpan={3}
+          >
+            <p
+              className="empty-message pa5"
+            >
+              Não há dados
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </BlipTableComponent>
+</BlipTableContainer>
+`;
+
+exports[`Testing BlipTable Should render table with editing permission 1`] = `
+<BlipTableContainer
+  canSelect={true}
+  data={
+    Array [
+      Object {
+        "id": 1,
+        "p": "p1",
+        "s": "s1",
+      },
+      Object {
+        "id": 2,
+        "p": "p2",
+        "s": "s2",
+      },
+      Object {
+        "id": 3,
+        "p": "p3",
+        "s": "s3",
+      },
+    ]
+  }
+  model={
+    Array [
+      Object {
+        "key": "p",
+        "label": "Primeira coluna",
+      },
+      Object {
+        "key": "s",
+        "label": "Segunda coluna",
+      },
+    ]
+  }
+  selectedItems={Array []}
+>
+  <BlipTableComponent
+    bodyHeight="200px"
+    canSelect={true}
+    content={
+      Object {
+        "emptyMessage": "Não há dados",
+        "selected": "selecionado(s)",
+      }
+    }
+    currentSort={
+      Object {
+        "order": "",
+        "property": "",
+      }
+    }
+    data={
+      Array [
+        Object {
+          "id": 1,
+          "p": "p1",
+          "s": "s1",
+        },
+        Object {
+          "id": 2,
+          "p": "p2",
+          "s": "s2",
+        },
+        Object {
+          "id": 3,
+          "p": "p3",
+          "s": "s3",
+        },
+      ]
+    }
+    emptyMessage="Não há dados"
+    idKey="id"
+    isAllSelected={[Function]}
+    model={
+      Array [
+        Object {
+          "key": "p",
+          "label": "Primeira coluna",
+        },
+        Object {
+          "key": "s",
+          "label": "Segunda coluna",
+        },
+      ]
+    }
+    selectedItems={Array []}
+    setSort={[Function]}
+    toggleSelect={[Function]}
+    toggleSelectAll={[Function]}
+  >
+    <table
+      className="bp-table w-100 tl bp-table--scroll-y "
+    >
+      <thead
+        className="bp-c-desk"
+      >
+        <tr
+          className="w-100"
+        >
+          <th
+            className="w3"
+          >
+            <BlipCheckBoxComponent
+              checked={false}
+              toggleCheck={[Function]}
+            >
+              <label
+                className="bp-input--check--wrapper"
+              >
+                <input
+                  checked={false}
+                  className="bp-input"
+                  name="checkbox-group"
+                  onChange={[Function]}
+                  type="checkbox"
+                />
+                <div
+                  className="bp-input--checkbox"
+                >
+                  ✓
+                </div>
+              </label>
+            </BlipCheckBoxComponent>
+          </th>
+          <th
+            key="p"
+          >
+            <div
+              className="flex items-center"
+            >
+              <Sorter
+                currentSort={
+                  Object {
+                    "order": "",
+                    "property": "",
+                  }
+                }
+                property="p"
+                setSort={[Function]}
+              >
+                <div
+                  className="ordinator flex flex-column justify-center mr2 pointer"
+                  onClick={[Function]}
+                >
+                  <span
+                    className="arrow asc mb1 "
+                  />
+                  <span
+                    className="arrow desc "
+                  />
+                </div>
+              </Sorter>
+              <p>
+                Primeira coluna
+              </p>
+            </div>
+          </th>
+          <th
+            key="s"
+          >
+            <div
+              className="flex items-center"
+            >
+              <Sorter
+                currentSort={
+                  Object {
+                    "order": "",
+                    "property": "",
+                  }
+                }
+                property="s"
+                setSort={[Function]}
+              >
+                <div
+                  className="ordinator flex flex-column justify-center mr2 pointer"
+                  onClick={[Function]}
+                >
+                  <span
+                    className="arrow asc mb1 "
+                  />
+                  <span
+                    className="arrow desc "
+                  />
+                </div>
+              </Sorter>
+              <p>
+                Segunda coluna
+              </p>
+            </div>
+          </th>
+          <th
+            className="w5"
+          >
+            <div
+              className="selectedItems flex justify-around items-center hidden"
+            >
+              <p
+                className="nowrap"
+              >
+                0
+                 
+                selecionado(s)
+              </p>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        style={
+          Object {
+            "maxHeight": "200px",
+          }
+        }
+      >
+        <tr
+          className=""
+          key="1"
+        >
+          <td
+            className="w3"
+          >
+            <BlipCheckBoxComponent
+              checked={false}
+              toggleCheck={[Function]}
+            >
+              <label
+                className="bp-input--check--wrapper"
+              >
+                <input
+                  checked={false}
+                  className="bp-input"
+                  name="checkbox-group"
+                  onChange={[Function]}
+                  type="checkbox"
+                />
+                <div
+                  className="bp-input--checkbox"
+                >
+                  ✓
+                </div>
+              </label>
+            </BlipCheckBoxComponent>
+          </td>
+          <td
+            key="p1"
+            title="p1"
+          >
+            p1
+          </td>
+          <td
+            key="s1"
+            title="s1"
+          >
+            s1
+          </td>
+          <td
+            className="w5"
+          />
+        </tr>
+        <tr
+          className=""
+          key="2"
+        >
+          <td
+            className="w3"
+          >
+            <BlipCheckBoxComponent
+              checked={false}
+              toggleCheck={[Function]}
+            >
+              <label
+                className="bp-input--check--wrapper"
+              >
+                <input
+                  checked={false}
+                  className="bp-input"
+                  name="checkbox-group"
+                  onChange={[Function]}
+                  type="checkbox"
+                />
+                <div
+                  className="bp-input--checkbox"
+                >
+                  ✓
+                </div>
+              </label>
+            </BlipCheckBoxComponent>
+          </td>
+          <td
+            key="p2"
+            title="p2"
+          >
+            p2
+          </td>
+          <td
+            key="s2"
+            title="s2"
+          >
+            s2
+          </td>
+          <td
+            className="w5"
+          />
+        </tr>
+        <tr
+          className=""
+          key="3"
+        >
+          <td
+            className="w3"
+          >
+            <BlipCheckBoxComponent
+              checked={false}
+              toggleCheck={[Function]}
+            >
+              <label
+                className="bp-input--check--wrapper"
+              >
+                <input
+                  checked={false}
+                  className="bp-input"
+                  name="checkbox-group"
+                  onChange={[Function]}
+                  type="checkbox"
+                />
+                <div
+                  className="bp-input--checkbox"
+                >
+                  ✓
+                </div>
+              </label>
+            </BlipCheckBoxComponent>
+          </td>
+          <td
+            key="p3"
+            title="p3"
+          >
+            p3
+          </td>
+          <td
+            key="s3"
+            title="s3"
+          >
+            s3
+          </td>
+          <td
+            className="w5"
+          />
+        </tr>
+      </tbody>
+    </table>
+  </BlipTableComponent>
+</BlipTableContainer>
+`;
+
+exports[`Testing BlipTable Should render table with reading permission 1`] = `
+<BlipTableContainer
+  canSelect={false}
+  data={
+    Array [
+      Object {
+        "id": 1,
+        "p": "p1",
+        "s": "s1",
+      },
+      Object {
+        "id": 2,
+        "p": "p2",
+        "s": "s2",
+      },
+      Object {
+        "id": 3,
+        "p": "p3",
+        "s": "s3",
+      },
+    ]
+  }
+  model={
+    Array [
+      Object {
+        "key": "p",
+        "label": "Primeira coluna",
+      },
+      Object {
+        "key": "s",
+        "label": "Segunda coluna",
+      },
+    ]
+  }
+  selectedItems={Array []}
+>
+  <BlipTableComponent
+    bodyHeight="200px"
+    canSelect={false}
+    content={
+      Object {
+        "emptyMessage": "Não há dados",
+        "selected": "selecionado(s)",
+      }
+    }
+    currentSort={
+      Object {
+        "order": "",
+        "property": "",
+      }
+    }
+    data={
+      Array [
+        Object {
+          "id": 1,
+          "p": "p1",
+          "s": "s1",
+        },
+        Object {
+          "id": 2,
+          "p": "p2",
+          "s": "s2",
+        },
+        Object {
+          "id": 3,
+          "p": "p3",
+          "s": "s3",
+        },
+      ]
+    }
+    emptyMessage="Não há dados"
+    idKey="id"
+    isAllSelected={[Function]}
+    model={
+      Array [
+        Object {
+          "key": "p",
+          "label": "Primeira coluna",
+        },
+        Object {
+          "key": "s",
+          "label": "Segunda coluna",
+        },
+      ]
+    }
+    selectedItems={Array []}
+    setSort={[Function]}
+    toggleSelect={[Function]}
+    toggleSelectAll={[Function]}
+  >
+    <table
+      className="bp-table w-100 tl bp-table--scroll-y "
+    >
+      <thead
+        className="bp-c-desk"
+      >
+        <tr
+          className="w-100"
+        >
+          <th
+            key="p"
+          >
+            <div
+              className="flex items-center"
+            >
+              <Sorter
+                currentSort={
+                  Object {
+                    "order": "",
+                    "property": "",
+                  }
+                }
+                property="p"
+                setSort={[Function]}
+              >
+                <div
+                  className="ordinator flex flex-column justify-center mr2 pointer"
+                  onClick={[Function]}
+                >
+                  <span
+                    className="arrow asc mb1 "
+                  />
+                  <span
+                    className="arrow desc "
+                  />
+                </div>
+              </Sorter>
+              <p>
+                Primeira coluna
+              </p>
+            </div>
+          </th>
+          <th
+            key="s"
+          >
+            <div
+              className="flex items-center"
+            >
+              <Sorter
+                currentSort={
+                  Object {
+                    "order": "",
+                    "property": "",
+                  }
+                }
+                property="s"
+                setSort={[Function]}
+              >
+                <div
+                  className="ordinator flex flex-column justify-center mr2 pointer"
+                  onClick={[Function]}
+                >
+                  <span
+                    className="arrow asc mb1 "
+                  />
+                  <span
+                    className="arrow desc "
+                  />
+                </div>
+              </Sorter>
+              <p>
+                Segunda coluna
+              </p>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        style={
+          Object {
+            "maxHeight": "200px",
+          }
+        }
+      >
+        <tr
+          className=""
+          key="1"
+        >
+          <td
+            key="p1"
+            title="p1"
+          >
+            p1
+          </td>
+          <td
+            key="s1"
+            title="s1"
+          >
+            s1
+          </td>
+        </tr>
+        <tr
+          className=""
+          key="2"
+        >
+          <td
+            key="p2"
+            title="p2"
+          >
+            p2
+          </td>
+          <td
+            key="s2"
+            title="s2"
+          >
+            s2
+          </td>
+        </tr>
+        <tr
+          className=""
+          key="3"
+        >
+          <td
+            key="p3"
+            title="p3"
+          >
+            p3
+          </td>
+          <td
+            key="s3"
+            title="s3"
+          >
+            s3
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </BlipTableComponent>
+</BlipTableContainer>
+`;
+
+exports[`Testing BlipTable Should show actions 1`] = `
+<BlipTableContainer
+  actions={
+    Array [
+      <button
+        id="action-test"
+      >
+        teste
+      </button>,
+    ]
+  }
+  canSelect={true}
+  data={
+    Array [
+      Object {
+        "id": 1,
+        "p": "p1",
+        "s": "s1",
+      },
+      Object {
+        "id": 2,
+        "p": "p2",
+        "s": "s2",
+      },
+      Object {
+        "id": 3,
+        "p": "p3",
+        "s": "s3",
+      },
+    ]
+  }
+  model={
+    Array [
+      Object {
+        "key": "p",
+        "label": "Primeira coluna",
+      },
+      Object {
+        "key": "s",
+        "label": "Segunda coluna",
+      },
+    ]
+  }
+  selectedItems={
+    Array [
+      Object {
+        "id": 1,
+        "p": "p1",
+        "s": "s1",
+      },
+      Object {
+        "id": 2,
+        "p": "p2",
+        "s": "s2",
+      },
+    ]
+  }
+>
+  <BlipTableComponent
+    actions={
+      Array [
+        <button
+          id="action-test"
+        >
+          teste
+        </button>,
+      ]
+    }
+    bodyHeight="200px"
+    canSelect={true}
+    content={
+      Object {
+        "emptyMessage": "Não há dados",
+        "selected": "selecionado(s)",
+      }
+    }
+    currentSort={
+      Object {
+        "order": "",
+        "property": "",
+      }
+    }
+    data={
+      Array [
+        Object {
+          "id": 1,
+          "p": "p1",
+          "s": "s1",
+        },
+        Object {
+          "id": 2,
+          "p": "p2",
+          "s": "s2",
+        },
+        Object {
+          "id": 3,
+          "p": "p3",
+          "s": "s3",
+        },
+      ]
+    }
+    emptyMessage="Não há dados"
+    idKey="id"
+    isAllSelected={[Function]}
+    model={
+      Array [
+        Object {
+          "key": "p",
+          "label": "Primeira coluna",
+        },
+        Object {
+          "key": "s",
+          "label": "Segunda coluna",
+        },
+      ]
+    }
+    selectedItems={
+      Array [
+        Object {
+          "id": 1,
+          "p": "p1",
+          "s": "s1",
+        },
+        Object {
+          "id": 2,
+          "p": "p2",
+          "s": "s2",
+        },
+      ]
+    }
+    setSort={[Function]}
+    toggleSelect={[Function]}
+    toggleSelectAll={[Function]}
+  >
+    <table
+      className="bp-table w-100 tl bp-table--scroll-y "
+    >
+      <thead
+        className="bp-c-desk"
+      >
+        <tr
+          className="w-100"
+        >
+          <th
+            className="w3"
+          >
+            <BlipCheckBoxComponent
+              checked={false}
+              toggleCheck={[Function]}
+            >
+              <label
+                className="bp-input--check--wrapper"
+              >
+                <input
+                  checked={false}
+                  className="bp-input"
+                  name="checkbox-group"
+                  onChange={[Function]}
+                  type="checkbox"
+                />
+                <div
+                  className="bp-input--checkbox"
+                >
+                  ✓
+                </div>
+              </label>
+            </BlipCheckBoxComponent>
+          </th>
+          <th
+            key="p"
+          >
+            <div
+              className="flex items-center"
+            >
+              <Sorter
+                currentSort={
+                  Object {
+                    "order": "",
+                    "property": "",
+                  }
+                }
+                property="p"
+                setSort={[Function]}
+              >
+                <div
+                  className="ordinator flex flex-column justify-center mr2 pointer"
+                  onClick={[Function]}
+                >
+                  <span
+                    className="arrow asc mb1 "
+                  />
+                  <span
+                    className="arrow desc "
+                  />
+                </div>
+              </Sorter>
+              <p>
+                Primeira coluna
+              </p>
+            </div>
+          </th>
+          <th
+            key="s"
+          >
+            <div
+              className="flex items-center"
+            >
+              <Sorter
+                currentSort={
+                  Object {
+                    "order": "",
+                    "property": "",
+                  }
+                }
+                property="s"
+                setSort={[Function]}
+              >
+                <div
+                  className="ordinator flex flex-column justify-center mr2 pointer"
+                  onClick={[Function]}
+                >
+                  <span
+                    className="arrow asc mb1 "
+                  />
+                  <span
+                    className="arrow desc "
+                  />
+                </div>
+              </Sorter>
+              <p>
+                Segunda coluna
+              </p>
+            </div>
+          </th>
+          <th
+            className="w5"
+          >
+            <div
+              className="selectedItems flex justify-around items-center "
+            >
+              <p
+                className="nowrap"
+              >
+                2
+                 
+                selecionado(s)
+              </p>
+              <button
+                id="action-test"
+                key="test"
+              >
+                teste
+              </button>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        style={
+          Object {
+            "maxHeight": "200px",
+          }
+        }
+      >
+        <tr
+          className="selected"
+          key="1"
+        >
+          <td
+            className="w3"
+          >
+            <BlipCheckBoxComponent
+              checked={true}
+              toggleCheck={[Function]}
+            >
+              <label
+                className="bp-input--check--wrapper"
+              >
+                <input
+                  checked={true}
+                  className="bp-input"
+                  name="checkbox-group"
+                  onChange={[Function]}
+                  type="checkbox"
+                />
+                <div
+                  className="bp-input--checkbox"
+                >
+                  ✓
+                </div>
+              </label>
+            </BlipCheckBoxComponent>
+          </td>
+          <td
+            key="p1"
+            title="p1"
+          >
+            p1
+          </td>
+          <td
+            key="s1"
+            title="s1"
+          >
+            s1
+          </td>
+          <td
+            className="w5"
+          />
+        </tr>
+        <tr
+          className="selected"
+          key="2"
+        >
+          <td
+            className="w3"
+          >
+            <BlipCheckBoxComponent
+              checked={true}
+              toggleCheck={[Function]}
+            >
+              <label
+                className="bp-input--check--wrapper"
+              >
+                <input
+                  checked={true}
+                  className="bp-input"
+                  name="checkbox-group"
+                  onChange={[Function]}
+                  type="checkbox"
+                />
+                <div
+                  className="bp-input--checkbox"
+                >
+                  ✓
+                </div>
+              </label>
+            </BlipCheckBoxComponent>
+          </td>
+          <td
+            key="p2"
+            title="p2"
+          >
+            p2
+          </td>
+          <td
+            key="s2"
+            title="s2"
+          >
+            s2
+          </td>
+          <td
+            className="w5"
+          />
+        </tr>
+        <tr
+          className=""
+          key="3"
+        >
+          <td
+            className="w3"
+          >
+            <BlipCheckBoxComponent
+              checked={false}
+              toggleCheck={[Function]}
+            >
+              <label
+                className="bp-input--check--wrapper"
+              >
+                <input
+                  checked={false}
+                  className="bp-input"
+                  name="checkbox-group"
+                  onChange={[Function]}
+                  type="checkbox"
+                />
+                <div
+                  className="bp-input--checkbox"
+                >
+                  ✓
+                </div>
+              </label>
+            </BlipCheckBoxComponent>
+          </td>
+          <td
+            key="p3"
+            title="p3"
+          >
+            p3
+          </td>
+          <td
+            key="s3"
+            title="s3"
+          >
+            s3
+          </td>
+          <td
+            className="w5"
+          />
+        </tr>
+      </tbody>
+    </table>
+  </BlipTableComponent>
+</BlipTableContainer>
+`;

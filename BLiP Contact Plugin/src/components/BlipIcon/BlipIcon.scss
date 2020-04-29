@@ -1,0 +1,28 @@
+@import '../../globals';
+
+.bp-icon{
+  &--blip-light{
+    fill: $bp-color-blip-light;
+  }
+  &--desk{
+    fill: $bp-color-desk;
+  }
+  &--blip-dark{
+    fill: $bp-color-blip-dark;
+  }
+  &--onix{
+    fill: $bp-color-onix;
+  }
+  &--piano{
+    fill: $bp-color-piano;
+  }
+  &--rooftop{
+    fill: $bp-color-rooftop;
+  }
+  &--silver{
+    fill: $bp-color-silver;
+  }
+  &--whisper{
+    fill: $bp-color-whisper;
+  }
+}

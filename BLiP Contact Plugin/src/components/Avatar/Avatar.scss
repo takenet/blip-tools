@@ -1,0 +1,14 @@
+.avatar {
+    .profile-pic {
+        height: 77px;
+        width: 77px;
+    }
+    .upload {
+        display: none;
+    }
+    &:hover {
+        .upload {
+            display: flex;
+        }
+    }
+}
