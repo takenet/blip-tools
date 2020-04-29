@@ -12,19 +12,23 @@
  
  ![Manage List](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast1.png)
  
+ 3. Delete list.
+ 
+ ![Delete list](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast2.png)
+ 
  ### Members
  
  1. See all the members' distribution list. 
  2. Remove a member from a distribution list.
  
- ![Manage members](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast2.png)
+ ![Manage members](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast3.png)
  
  ### Contacts
  
  1. See all the contacts' bot.
  2. Add contacts into the selected distribution list.
  
- ![Manage contacts](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast3.png)
+ ![Manage contacts](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast4.png)
  
  3. Filter all the contacts' bot by:
 * Name
@@ -34,10 +38,10 @@
 * Id
 * Extras
 
-![Filter contacts](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast4.png)
+![Filter contacts](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast5.png)
 
  4. See all contact information.
-  ![See all contact information](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast5.png)
+  ![See all contact information](https://github.com/takenet/blip-tools/blob/master/BLiP%20Broadcast%20Plugin/imgs/broadcast6.png)
   
 
 ## Connecting the plugin to your bot
