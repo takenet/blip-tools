@@ -56,7 +56,7 @@ Just the field identity is required.
 
 1. Download or clone the project from `git`(the recommended way):
 
-`git clone https://github.com/takenet/blip-plugin-sample.git`
+`git clone [...]`
 
 2. Install all packages from npm:
 
