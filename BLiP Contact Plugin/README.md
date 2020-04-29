@@ -50,7 +50,7 @@ Just the field identity is required.
 
 3. Access the following path shown below to use the plugin:
 
-![Path to access the plugin](https://github.com/takenet/blip-tools/blob/master/BLiP%20Contact%20Plugin/images/img2.png)
+![Path to access the plugin](https://github.com/takenet/blip-tools/blob/master/BLiP%20Contact%20Plugin/images/img7.png)
 
 ## Getting started from this project
 
