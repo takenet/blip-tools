@@ -11,7 +11,7 @@ Just the field identity is required.
  
  ![Manage List](https://github.com/takenet/blip-tools/blob/master/BLiP%20Contact%20Plugin/images/img1.png)
  
- ### Contacts
+ ### Export Contacts
  
  1. See all the contacts' bot.
  2. Export all the selected contacts into a .csv file.
@@ -29,6 +29,10 @@ Just the field identity is required.
 ![Filter contacts](https://github.com/takenet/blip-tools/blob/master/BLiP%20Contact%20Plugin/images/img3.png)
 
  4. See all contact information.
+ 
+  ### Import Contacts
+  ![Filter contacts](https://github.com/takenet/blip-tools/blob/master/BLiP%20Contact%20Plugin/images/img4.png)
+  ![Filter contacts](https://github.com/takenet/blip-tools/blob/master/BLiP%20Contact%20Plugin/images/img5.png)
   
 
 ## Connecting the plugin to your bot
