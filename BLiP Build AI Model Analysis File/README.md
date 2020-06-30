@@ -19,11 +19,11 @@
 
 1. Download or clone the project from `git`(the recommended way):
 
-`git clone https://github.com/takenet/blip-plugin-sample.git`
+`git clone https://github.com/takenet/blip-tools.git`
 
 2. Install all packages from npm:
 
-`npm install`
+`cd BLiP Build AI Model Analysis File && npm install`
 
 3. Run the project:
 
