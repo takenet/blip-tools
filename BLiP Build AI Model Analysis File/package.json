@@ -1,0 +1,52 @@
+{
+  "name": "blip-plugin-example",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-brands-svg-icons": "^5.12.1",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@fortawesome/react-fontawesome": "^0.1.8",
+    "@testing-library/jest-dom": "^5.11.0",
+    "@testing-library/react": "^10.4.3",
+    "@testing-library/user-event": "^12.0.11",
+    "axios": "^0.19.2",
+    "blip-toolkit": "^5.12.0",
+    "bootstrap": "^4.4.1",
+    "iframe-message-proxy": "^1.1.1",
+    "moment": "^2.24.0",
+    "node-sass": "^4.13.1",
+    "react": "^16.12.0",
+    "react-bootstrap": "^1.0.0-beta.16",
+    "react-csv-downloader": "^1.8.0",
+    "react-dom": "^16.12.0",
+    "react-icons": "^3.9.0",
+    "react-localization": "^1.0.13",
+    "react-papaparse": "^3.0.3",
+    "react-scripts": "^3.4.0",
+    "react-toastify": "^6.0.6",
+    "resize-observer": "^1.0.0",
+    "tachyons": "^4.10.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "CI= react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

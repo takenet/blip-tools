@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Avatar Should render avatar with no editing permission 1`] = `
+<div
+  class="tc avatar placeholder relative"
+>
+  <img
+    alt="avatar"
+    class="profile-pic br-100 dib"
+    src=""
+  />
+</div>
+`;
+
+exports[`Testing Avatar Should render avatar with placeholder 1`] = `
+<div
+  class="tc avatar placeholder relative"
+>
+  <div
+    class="profile-pic br-100 dib bp-bg-sky flex items-center justify-center"
+  >
+    <img
+      alt="tenant"
+      class="h2 w2"
+      src="tenant.svg"
+    />
+  </div>
+</div>
+`;
+
+exports[`Testing Avatar Should show option to change image 1`] = `
+<div
+  class="tc avatar placeholder relative"
+>
+  <div
+    class="profile-pic br-100 dib bp-bg-sky flex items-center justify-center"
+  >
+    <img
+      alt="tenant"
+      class="h2 w2"
+      src="tenant.svg"
+    />
+  </div>
+  <label
+    for="profile-pic"
+  >
+    <div
+      class="upload br-100 absolute top-0 right-0 bp-bg-desk bp-c-whisper profile-pic flex flex-column items-center justify-center pointer o-80"
+    >
+      <svg
+        class="mb1 bp-fs-4"
+        height="1em"
+        width="1em"
+        xlink="http://www.w3.org/1999/xlink"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <use
+          class="bp-icon--whisper"
+          href="defs.svg#camera-outline"
+        />
+      </svg>
+      <p
+        class="pa0 bp-fs-7"
+      >
+        Change pic
+      </p>
+    </div>
+  </label>
+  <input
+    accept="image/*"
+    class="dn"
+    id="profile-pic"
+    name="profile-pic"
+    type="file"
+  />
+</div>
+`;
