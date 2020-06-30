@@ -12,7 +12,7 @@
 ![](./images/2.png)
 3. Select all tuples that you want and click to export.
 ![](./images/3.png)
-4. Update the file exported into your bot.
+4. Import the file exported into your bot.
 ![](./images/4.png)
 
 ## Getting started from this project
