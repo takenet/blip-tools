@@ -28,13 +28,9 @@ function App() {
   }
 
   return (
-    <>
       <div className="App">
         <MainFrame sendEvent={sendEvent} />
       </div>
-      <p>Não encontrou o que buscava? <a href="https://forum.blip.ai/" target="_blank">Solicite no nosso fórum!</a> </p>
-      
-    </>
   );
 }
 

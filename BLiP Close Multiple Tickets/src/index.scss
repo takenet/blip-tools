@@ -1,0 +1,143 @@
+@import './globals';
+@import '~blip-toolkit/dist/scss/main';
+@import 'tachyons';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: $bp-ff;
+}
+
+body {
+  background-color: $bp-color-whisper;
+  color: $bp-color-rooftop;
+}
+
+a {
+  color: $bp-color-blip-light;
+  text-decoration: none;
+}
+
+#main {
+  margin: 10px auto;
+  width: 80%;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.bp-tabs-container .bp-tab-content {
+  padding-top: 20px;
+}
+
+.w6 {
+  width: 24rem;
+}
+.pagination{
+  margin-top: 15px;
+}
+.page-link {
+  color: #28b4c3 !important ;
+}
+
+.spinner-border {
+  width: 12rem !important ;
+  height: 12rem !important ;
+  //border: .96em solid currentColor !important ;
+}
+.page-item.active .page-link {
+  background-color: #28b4c3 !important ;
+  border-color: #51dbe3  !important;
+  color: white !important ;
+}
+
+.btn-primary {
+  background-color: #28b4c3 !important;
+  border-color: #51dbe3 !important;
+}
+
+.badge-info {
+  background-color: #28b4c3;
+}
+
+.badge-success {
+  background-color: #4dcb7b !important;
+}
+
+.btn-success {
+  background-color: #4dcb7b !important;
+  border-color: #4dcb7b !important;
+}
+.medium-padding-bottom{
+padding-bottom: 5px;
+}
+.medium-padding-top{
+padding-top: 5px;
+}
+.btn-danger {
+  background-color: #ff363e !important;
+  border-color: #ff5a60 !important;
+}
+.items-index{
+     margin-bottom: 0 !important; 
+}
+.card-header {
+  background-color: #28b4c3 !important;
+  color: white !important;
+}
+.export-button{
+  width:fit-content;
+}
+.extras-item-hidden{
+  display: none !important;
+}
+.extras-item-visible{
+  display: flex !important;
+}
+.extras-remove-item{
+  margin-top: 10px;
+  color: red;
+}
+button{
+  color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s
+}
+
+.spinner{
+  padding-top: 80px;
+  text-align: center;
+}
+.tickets-box{
+  padding-top: 50px ;
+  padding-bottom: 50px ;
+}
+
+.modal-content{
+  width: 120% !important;
+}
+
+.progress{
+  margin-top: 100px;
+}

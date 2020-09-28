@@ -1,0 +1,18 @@
+@import '../../globals';
+
+.BlipSearch{
+  input{
+    width: 0;
+    transition: width .5s;
+    outline: none;
+    border: none;
+    border-bottom: 1px $bp-color-silver solid;
+    &.show{
+      width: 200px;
+    }
+    &:focus{
+      border: none;
+      border-bottom: 2px $bp-color-blip-light solid;
+    }
+  }
+}

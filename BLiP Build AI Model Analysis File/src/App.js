@@ -4,7 +4,7 @@ import { PageHeader } from "components/PageHeader"
 import { CommonProvider } from "contexts/CommonContext"
 import { PageTemplate } from "components/PageTemplate"
 import { getIntents, getAnswers } from "api/axiosService"
-import { Button, Form, Col, Spinner } from "react-bootstrap"
+import { Button, Form, Col, Spinner, Row } from "react-bootstrap"
 import { BlipTable } from "components/BlipTable";
 import CsvDownloader from "react-csv-downloader";
 import { ToastContainer, toast } from "react-toastify";
@@ -27,6 +27,7 @@ function App() {
     ];
 
     const [key, setkey] = useState('');
+    const [url, setUrl] = useState('');
     const [intents, setIntents] = useState([]);
     const [answers, setAnswers] = useState([]);
     const [data, setData] = useState([]);
@@ -35,12 +36,13 @@ function App() {
     const [spinner, setSpinner] = useState({ visibility: false })
 
     const loadIntents = async () => {
-        setIntents(await getIntents(key, handleError))
+        setIntents(await getIntents(key, url, handleError))
     }
     const loadData = async () => {
+        setSeleted([]);
         let itens = [];
         for (const intent of intents) {
-            itens.push(await getAnswers(key, intent.id))
+            itens.push(await getAnswers(key, url, intent.id))
         }
         setAnswers(itens)
         setSpinner({ visibility: false })
@@ -49,13 +51,19 @@ function App() {
     const buildTableBase = () => {
         let items = [];
         answers.forEach(e => {
-            let id = e.id;
-            e.questions.forEach(i => {
-                items.push({ text: i.text, id: id })
-            })
+            if (e) {
+                let id = e.id;
+                e.questions.forEach(i => {
+                    items.push({ text: removeSeparator(i.text), id: id })
+                })
+            }
         })
         setData(items);
     }
+    const removeSeparator = (text) => {
+        return text.split(',').join('');
+    }
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         setSpinner({ visibility: true })
@@ -66,7 +74,7 @@ function App() {
         toast.error("Error to load intentions")
         setSpinner({ visibility: false })
     }
-    
+
 
     useEffect(() => {
         if (intents)
@@ -97,18 +105,21 @@ function App() {
                 <PageTemplate title={title}>
                     <div id="tab-nav" >
                         <Form onSubmit={handleSubmit}>
-                            <Form.Group >
-                                <Form.Row className="align-items-center">
-                                    <Col md="7">
-                                        <Form.Control type="text" required placeholder="Key bGFiqpolfyaW9u..." value={key} onChange={(e) => { setkey(e.target.value) }} />
-                                    </Col>
-                                    <Col md="auto">
-                                        <Button type="submit" >Load</Button>
-                                    </Col>
-                                </Form.Row>
+                            <Form.Group as={Row} >
+                                <Form.Label column sm="3">Url to send commands</Form.Label>
+                                <Col sm="9">
+                                    <Form.Control type="text" required placeholder="https://http.msging.net/commands" value={url} onChange={(e) => { setUrl(e.target.value) }} /><br />
+                                </Col>
+
+                                <Form.Label column sm="3">Header authentication (Authorization)</Form.Label>
+                                <Col sm="9">
+                                    <Form.Control type="text" required placeholder="Key bGFiqpolfyaW9u..." value={key} onChange={(e) => { setkey(e.target.value) }} />
+                                </Col>
+
                             </Form.Group>
+                            <Button className="float-right" type="submit">Load</Button>
                         </Form>
-                        <div  style={spinner.visibility ? { display: '', textAlign: "center" } : { display: "none" , textAlign: "center"}}>
+                        <div className="spinner" style={spinner.visibility ? { display: '' } : { display: "none" }}>
                             <Spinner animation="border" variant="info" />
                         </div>
                         <div style={data.length > 0 ? { visibility: '' } : { visibility: 'hidden' }}>

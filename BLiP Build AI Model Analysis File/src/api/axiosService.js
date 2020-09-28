@@ -1,7 +1,7 @@
 import axios from "axios";
+import { v4 as uuidv4 } from 'uuid';
 
-export const getIntents = async (key, handleError) => {
-    const url = "https://msging.net/commands";
+export const getIntents = async (key, url, handleError) => {
 
     const headers = {
         "Content-Type": "application/json",
@@ -9,7 +9,7 @@ export const getIntents = async (key, handleError) => {
     };
 
     const body = {
-        "id": `gdfgdfgdf-fdgdfg-gdfgdf${Math.floor(Math.random() * 999999999999)}`,
+        "id": uuidv4(),
         "to": "postmaster@ai.msging.net",
         "method": "get",
         "uri": "/intentions?take=100"
@@ -27,8 +27,7 @@ export const getIntents = async (key, handleError) => {
 
 }
 
-export const getAnswers = async (key, intent) => {
-    const url = "https://msging.net/commands";
+export const getAnswers = async (key, url, intent) => {
 
     const headers = {
         "Content-Type": "application/json",
@@ -36,16 +35,15 @@ export const getAnswers = async (key, intent) => {
     };
 
     const body = {
-        "id": `gfsdfsq143g-gdfgdf${Math.floor(Math.random() * 999999999999)}`,
+        "id": uuidv4(),
         "to": "postmaster@ai.msging.net",
         "method": "get",
-        "uri": `/intentions/${intent}?deep=true`
+        "uri": `/intentions/${encodeURI(intent)}?deep=true`
     }
     try {
         let response = await axios.post(url, body, {
             headers: headers
         });
-
         return response.data.resource;
     } catch (error) {
         console.error(`Error to load Answers`)

@@ -3,10 +3,12 @@
 }
 
 .main-frame {
-   background: #DAF2F4; 
+   background: #ffffff ; 
   /* opacity: 0.3; */
   padding: 8%;
-  font-size: 2.0vw;
+  font-size: 1.5vw;
+  overflow: hidden;
+  margin: auto;
 }
 
 .main-frame-text {
@@ -17,14 +19,15 @@
   /* font-size: 60px; */
   line-height: 120%;
   margin-right: 2%;
-  color: #607B99;
+  color: #000000;
 }
 
 .main-frame img {
-  width: 8%;
+  width: 12%;
   margin-right: 2%;
   /* vertical-align: -37px; */
-  vertical-align:middle
+  vertical-align:middle;
+  margin-top: -1%;
 }
 
 .button-frame{

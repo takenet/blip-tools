@@ -12,18 +12,18 @@
 ![](./images/2.png)
 3. Select all tuples that you want and click to export.
 ![](./images/3.png)
-4. Import the file exported into your bot.
+4. Update the file exported into your bot.
 ![](./images/4.png)
 
 ## Getting started from this project
 
 1. Download or clone the project from `git`(the recommended way):
 
-`git clone https://github.com/takenet/blip-tools.git`
+`git clone https://github.com/takenet/blip-plugin-sample.git`
 
 2. Install all packages from npm:
 
-`cd BLiP Build AI Model Analysis File && npm install`
+`npm install`
 
 3. Run the project:
 

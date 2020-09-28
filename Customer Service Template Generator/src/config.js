@@ -1,3 +1,3 @@
 export const config = {
-baseGa: 'UA-79317370-11'
+    baseGa: 'UA-79317370-11'
 };
