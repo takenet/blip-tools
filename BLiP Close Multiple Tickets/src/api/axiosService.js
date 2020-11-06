@@ -50,36 +50,43 @@ export const getAnswers = async (key, url, intent) => {
     }
 }
 
-export const getOpenTickets = async (key, url, toastError, updateProgressBar) => {
+export const getOpenTickets = async (header, toastError, updateProgressBar) => {
 
     const headers = {
         "Content-Type": "application/json",
-        Authorization: `${key}`
+        Authorization: `${header.key}`
     };
 
     const body = {
         "id": uuidv4(),
         "to": "postmaster@desk.msging.net",
         "method": "get",
-        "uri": "/tickets?$filter=status%20eq%20'open'&$skip=0&$take=5000"
+        "uri": `/tickets?$filter=status%20eq%20'open'${header.status.waiting ? "%20or%20status%20eq%20'waiting'" : ''}${header.identities.customer ? `%20and%20(substringof('${encodeURI(header.identities.customer)}'%2CCustomerIdentity))` : ''}${header.dates.storage.date ? `%20and%20storageDate%20${header.dates.storage.select === '>' ? 'ge' : 'le'}%20datetimeoffset'${encodeURIComponent(header.dates.storage.date)}'` : ''}${header.dates.open.date ? `%20and%20openDate%20${header.dates.open.select === '>' ? 'ge' : 'le'}%20datetimeoffset'${encodeURIComponent(header.dates.open.date)}'` : ''}${header.dates.status.date ? `%20and%20statusDate%20${header.dates.status.select === '>' ? 'ge' : 'le'}%20datetimeoffset'${encodeURIComponent(header.dates.status.date)}'` : ''}${header.identities.agent ? `%20and%20(AgentIdentity%20eq%20'${encodeURI(header.identities.agent)}')` : ''}&$skip=${header.pagination.skip}&$take=${header.pagination.take}`
     }
     try {
-        let response = await axios.post(url, body, {
+        let response = await axios.post(header.url, body, {
             headers: headers
         });
         let items = [];
         for (const item of response.data.resource.items) {
             items.push({
                 ...item,
-                lastMessageDate: await getLastMessage(key, url, item.customerIdentity, item.id)
+                lastMessageDate: await getLastMessage(header.key, header.url, item.customerIdentity, item.id)
             })
 
             let percentage = ((items.length / response.data.resource.items.length) * 100);
             updateProgressBar(percentage.toFixed(2));
         }
-
-
-        return items;
+        if (header.dates.lastMessageDate.date !== '')
+            return items.filter(e =>{
+                if(header.dates.lastMessageDate.select === '<' && header.dates.lastMessageDate.date > e.lastMessageDate)
+                return e
+                else if(header.dates.lastMessageDate.select === '>' && header.dates.lastMessageDate.date < e.lastMessageDate)
+                return e
+            })
+              
+        else
+            return items
     } catch (error) {
         console.error(`Error to load tickets` + error)
         toastError(`Error to load tickets`)
@@ -123,7 +130,6 @@ export const getLastMessage = async (key, url, customerIdentity, ticketId) => {
 
 
 export const closeTicket = async (key, url, ticketId, toastError) => {
-    console.log("closing ticket");
     const headers = {
         "Content-Type": "application/json",
         Authorization: `${key}`
@@ -144,6 +150,7 @@ export const closeTicket = async (key, url, ticketId, toastError) => {
         const response = await axios.post(url, body, {
             headers: headers
         });
+        console.log("closing")
         if (response.data.status === 'success') {
             return true;
         }

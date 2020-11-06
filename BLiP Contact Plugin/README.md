@@ -12,9 +12,9 @@
  **Value**: 
  ```json
 { 
-   "broadcast-plugin":{ 
-      "name":"Broadcast Plugin",
-      "url":"https://blip-broadcast-plugin.netlify.com/"
+   "contact-plugin":{ 
+      "name":"Contact Plugin",
+      "url":"https://blip-contact-plugin.netlify.app/"
    }
 }
 

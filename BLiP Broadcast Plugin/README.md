@@ -13,8 +13,8 @@
  ```json
 { 
    "broadcast-plugin":{ 
-      "name":"Broadcast Plugin",
-      "url":"https://blip-broadcast-plugin.netlify.com/"
+      "name":"Broadcast List Plugin",
+      "url":"https://blip-broadcast-plugin.netlify.app"
    }
 }
 
