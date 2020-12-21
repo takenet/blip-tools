@@ -165,7 +165,7 @@ export const getLists = async () => {
                 destination: 'MessagingHubService',
                 command: {
                     method: 'get',
-                    uri: '/lists',
+                    uri: '/lists?$take=5000',
                     to: 'postmaster@broadcast.msging.net'
                 }
             }

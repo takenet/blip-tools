@@ -82,8 +82,9 @@ function App() {
 
     const handleAddList = async (e, newList) => {
         e.preventDefault();
+       
         withLoading(async () => {
-            await createList(application.name + "-" + newList);
+            await createList(newList+"-"+application.shortName);
             setLists(await getLists());
         })
     }
@@ -109,7 +110,7 @@ function App() {
         })
     }, [])
 
-    const title = "Broadcast Plugin"
+    const title = "Broadcast List Plugin"
 
     return (
         <CommonProvider>

@@ -1,4 +1,4 @@
-# BLiP Broadcast Plugin
+# BLiP Broadcast List Plugin
 
  This is a BLiP example plugin made to help users manage distribuiton lists with ease.
 
@@ -12,7 +12,7 @@
  **Value**: 
  ```json
 { 
-   "broadcast-plugin":{ 
+   "broadcast-list-plugin":{ 
       "name":"Broadcast List Plugin",
       "url":"https://blip-broadcast-plugin.netlify.app"
    }
