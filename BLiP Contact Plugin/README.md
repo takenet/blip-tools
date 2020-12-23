@@ -1,8 +1,8 @@
-# BLiP Broadcast Plugin
+# BLiP Contact Plugin
 
  This is a BLiP example plugin made to help users manage distribuiton lists with ease.
 
- Visit the sample [page here](https://blip-broadcast-plugin.netlify.com/).
+ Visit the sample [page here](https://blip-contact-plugin.netlify.app/).
 
 ## Connecting the plugin to your bot
 1. Access your bot's advanced configuration.
