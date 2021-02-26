@@ -1,3 +1,6 @@
+# This project is depreciated and is not working as it should
+
+
 ## Conversations viewer - BLiP 
 
 *This is an example of how to use the [BLiP Chat History extension](https://docs.blip.ai/#chat-history) API*
