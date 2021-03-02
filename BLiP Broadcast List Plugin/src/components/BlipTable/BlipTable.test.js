@@ -5,12 +5,10 @@ import { useContentLocalizer } from 'hooks/useContentLocalizer'
 
 jest.mock('hooks/useContentLocalizer')
 
-useContentLocalizer.mockImplementation(
-  () => ({
-    selected: 'selecionado(s)',
-    emptyMessage: 'Não há dados',
-  })
-)
+useContentLocalizer.mockImplementation(() => ({
+  selected: 'selecionado(s)',
+  emptyMessage: 'Não há dados',
+}))
 
 const mockModel = [
   { label: 'Primeira coluna', key: 'p' },
@@ -84,7 +82,11 @@ describe('Testing BlipTable', () => {
     )
 
     const checkBoxes = component.find({ type: 'checkbox' })
-    const checkedBoxes = checkBoxes.reduce((total, checkbox) => checkbox.props().checked === true ? total + 1 : total, 0)
+    const checkedBoxes = checkBoxes.reduce(
+      (total, checkbox) =>
+        checkbox.props().checked === true ? total + 1 : total,
+      0
+    )
 
     expect(component.exists('.selectedItems.hidden')).toBeFalsy()
     expect(checkBoxes.length).toBe(4)
@@ -99,7 +101,11 @@ describe('Testing BlipTable', () => {
         data={mockData}
         selectedItems={mockData.slice(0, 2)}
         canSelect={true}
-        actions={[<button key="test" id="action-test" >teste</button>]}
+        actions={[
+          <button key="test" id="action-test">
+            teste
+          </button>,
+        ]}
       />
     )
 
@@ -118,7 +124,11 @@ describe('Testing BlipTable', () => {
     )
 
     const checkBoxes = component.find({ type: 'checkbox' })
-    const checkedBoxes = checkBoxes.reduce((total, checkbox) => checkbox.props().checked === true ? total + 1 : total, 0)
+    const checkedBoxes = checkBoxes.reduce(
+      (total, checkbox) =>
+        checkbox.props().checked === true ? total + 1 : total,
+      0
+    )
 
     expect(checkBoxes.length).toBe(4)
     expect(checkedBoxes).toBe(4)
@@ -126,7 +136,7 @@ describe('Testing BlipTable', () => {
   })
 
   it('Should call function when click sort', () => {
-    const onSortSet = jest.fn(() => { })
+    const onSortSet = jest.fn(() => {})
 
     const component = mount(
       <BlipTable

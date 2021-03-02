@@ -6,14 +6,14 @@ import './index.scss'
 import * as serviceWorker from './serviceWorker'
 import { setHeight } from 'api/commomService'
 import { ResizeObserver } from 'resize-observer'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 IframeMessageProxy.listen()
 
-const rootDiv = document.getElementById("root")
+const rootDiv = document.getElementById('root')
 
 const documentObserver = new ResizeObserver(() => {
-    setHeight(rootDiv.scrollHeight)
+  setHeight(rootDiv.scrollHeight)
 })
 
 documentObserver.observe(rootDiv)

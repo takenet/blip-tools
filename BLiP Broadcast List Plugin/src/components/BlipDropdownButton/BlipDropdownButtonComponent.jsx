@@ -11,29 +11,34 @@ const BlipDropdownButtonComponent = ({
   toggleDropdown,
   footer,
 }) => {
-  return <div className="BlipDropdownButton relative">
-    <button className={`bp-btn ${buttonClass}`} onClick={toggleDropdown}>{label}</button>
-    {
-      showDropdown &&
-      <>
-        <div className="overlay z-1" onClick={toggleDropdown}></div>
-        <div className={`bp-card bp-card--${arrowSide}-arrow pa0 z-2 absolute ${dropdownClass}`}>
-          <div className="pa3">
-            {children}
+  return (
+    <div className="BlipDropdownButton relative">
+      <button className={`bp-btn ${buttonClass}`} onClick={toggleDropdown}>
+        {label}
+      </button>
+      {showDropdown && (
+        <>
+          <div className="overlay z-1" onClick={toggleDropdown}></div>
+          <div
+            className={`bp-card bp-card--${arrowSide}-arrow pa0 z-2 absolute ${dropdownClass}`}
+          >
+            <div className="pa3">{children}</div>
+            {footer.length > 0 && (
+              <>
+                <div className="bp-divider-h" />
+                <div
+                  className="pa2 flex flex-row-reverse"
+                  onClick={toggleDropdown}
+                >
+                  {footer}
+                </div>
+              </>
+            )}
           </div>
-          {
-            footer.length > 0 &&
-            <>
-              <div className="bp-divider-h" />
-              <div className="pa2 flex flex-row-reverse" onClick={toggleDropdown}>
-                {footer}
-              </div>
-            </>
-          }
-        </div>
-      </>
-    }
-  </div>
+        </>
+      )}
+    </div>
+  )
 }
 
 BlipDropdownButtonComponent.propTypes = {

@@ -7,7 +7,7 @@ export const BlipInputReact = (props) => {
   const instance = new BlipInput(props)
 
   useEffect(() => {
-    if(instance){
+    if (instance) {
       const element = instance.render(props)
       wrapper.current.appendChild(element)
     }
@@ -16,6 +16,6 @@ export const BlipInputReact = (props) => {
   return <div ref={wrapper} className={props.className} />
 }
 
-BlipInputReact.propTypes={
+BlipInputReact.propTypes = {
   className: PropTypes.string,
 }

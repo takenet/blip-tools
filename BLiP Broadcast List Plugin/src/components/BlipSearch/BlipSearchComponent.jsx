@@ -12,16 +12,29 @@ const BlipSearchComponent = ({
   inputRef,
   debounce,
 }) => {
-  const debouncedChange = lodashDebounce(e => onChange(e.target.value), debounce)
-  const persistedDebounceChange = e => {
+  const debouncedChange = lodashDebounce(
+    (e) => onChange(e.target.value),
+    debounce
+  )
+  const persistedDebounceChange = (e) => {
     e.persist()
     return debouncedChange(e)
   }
 
-  return <div className="BlipSearch  flex">
-    <button className="bp-btn  bp-btn--text-only bp-fs-3" onClick={showInput}><BlipIcon name="search" color="rooftop" /></button>
-    <input className={`${shouldShowInput ? 'show' : ''}`} type="text" onChange={persistedDebounceChange} onBlur={hideInput} ref={inputRef} />
-  </div>
+  return (
+    <div className="BlipSearch  flex">
+      <button className="bp-btn  bp-btn--text-only bp-fs-3" onClick={showInput}>
+        <BlipIcon name="search" color="rooftop" />
+      </button>
+      <input
+        className={`${shouldShowInput ? 'show' : ''}`}
+        type="text"
+        onChange={persistedDebounceChange}
+        onBlur={hideInput}
+        ref={inputRef}
+      />
+    </div>
+  )
 }
 
 BlipSearchComponent.propTypes = {

@@ -1,204 +1,211 @@
+/* eslint-disable no-param-reassign */
 import { IframeMessageProxy } from 'iframe-message-proxy'
-import { generateLineFilter, generateLinePagination } from '../util';
-import { errorToast, successToast } from '../toastUtil';
+import { generateLineFilter, generateLinePagination } from '../util'
+import { errorToast, successToast } from '../toastUtil'
 
-const DEFAULT_DATA = { total: 0, items: [] };
-
-export const getApplication = async () => {
+const DEFAULT_DATA = { total: 0, items: [] }
+export class ApplicationService {
+  static getApplication = async () => {
     const { response: application } = await IframeMessageProxy.sendMessage({
-        action: 'getApplication',
+      action: 'getApplication',
     })
     return application
-}
-export const getContacts = async (pagination, filter) => {
+  }
+  static ping = async () => {
     try {
-        const { response } = await IframeMessageProxy.sendMessage({
-            action: 'sendCommand',
-            content: {
-                destination: 'MessagingHubService',
-                command: {
-                    method: 'get',
-                    uri: '/contacts' + generateLinePagination(pagination * 20) + generateLineFilter(filter)
-                }
-            }
-        })
-
-        return response
-
+      const { response } = await IframeMessageProxy.sendMessage({
+        action: 'sendCommand',
+        content: {
+          destination: 'MessagingHubService',
+          command: {
+            method: 'get',
+            uri: '/ping',
+          },
+        },
+      })
+      return response !== undefined || false
     } catch (error) {
-        errorToast("Error loading contacts")
-        return DEFAULT_DATA;
-
+      return false
     }
-}
-export const createList = async (newListName) => {
+  }
+  static getContacts = async (pagination, filter) => {
     try {
-        const response = await IframeMessageProxy.sendMessage({
-            action: 'sendCommand',
-            content: {
-                destination: 'MessagingHubService',
-                command: {
-                    method: 'set',
-                    type: "application/vnd.iris.distribution-list+json",
-                    uri: '/lists',
-                    to: 'postmaster@broadcast.msging.net',
-                    resource: {
-                        identity: `${newListName}@broadcast.msging.net`
-                    }
-                }
-            }
-        })
+      const { response } = await IframeMessageProxy.sendMessage({
+        action: 'sendCommand',
+        content: {
+          destination: 'MessagingHubService',
+          command: {
+            method: 'get',
+            uri:
+              '/contacts' +
+              generateLinePagination(pagination * 20) +
+              generateLineFilter(filter),
+          },
+        },
+      })
 
-        successToast(`${newListName} added`);
-        return response;
-
+      return response
     } catch (error) {
-        errorToast("Error creating list ")
-        return;
+      errorToast('Error loading contacts')
+      return DEFAULT_DATA
     }
+  }
+  static createList = async (newListName) => {
+    try {
+      const response = await IframeMessageProxy.sendMessage({
+        action: 'sendCommand',
+        content: {
+          destination: 'MessagingHubService',
+          command: {
+            method: 'set',
+            type: 'application/vnd.iris.distribution-list+json',
+            uri: '/lists',
+            to: 'postmaster@broadcast.msging.net',
+            resource: {
+              identity: `${newListName}@broadcast.msging.net`,
+            },
+          },
+        },
+      })
 
-
-}
-export const deleteCollectionLists = async (lists) => {
-    let count = 0;
+      successToast(`${newListName} added`)
+      return response
+    } catch (error) {
+      errorToast('Error creating list ')
+      return
+    }
+  }
+  static deleteCollectionLists = async (lists) => {
+    let count = 0
     for (const element of lists) {
-        count += await deleteList(element.name);
+      count += await this.deleteList(element.name)
     }
-    successToast(`${count} lists removed`);
-}
- const deleteList = async (list) => {
-    list = encodeURI(list);
+    successToast(`${count} lists removed`)
+  }
+  static deleteList = async (list) => {
+    list = encodeURI(list)
     try {
-        await IframeMessageProxy.sendMessage({
-            action: 'sendCommand',
-            content: {
-                destination: 'MessagingHubService',
-                command: {
-                    to: "postmaster@broadcast.msging.net",
-                    method: "delete",
-                    uri: `/lists/${list}`
+      await IframeMessageProxy.sendMessage({
+        action: 'sendCommand',
+        content: {
+          destination: 'MessagingHubService',
+          command: {
+            to: 'postmaster@broadcast.msging.net',
+            method: 'delete',
+            uri: `/lists/${list}`,
+          },
+        },
+      })
 
-                }
-            }
-        })
-
-
-        return 1;
-
+      return 1
     } catch (error) {
-        errorToast("Error deleting list")
-        return;
+      errorToast('Error deleting list')
+      return
     }
-
-
-}
-export const removeMemberCollection = async (list, members) => {
-    let count = 0;
+  }
+  static removeMemberCollection = async (list, members) => {
+    let count = 0
     for (const element of members) {
-        count += await removeMember(list, element.name);
+      count += await this.removeMember(list, element.name)
     }
-    successToast(`${count} members removed from ${list}`);
-}
-const removeMember = async (list, member) => {
-    list = encodeURI(list);
-    member = encodeURI(member);
+    successToast(`${count} members removed from ${list}`)
+  }
+  static removeMember = async (list, member) => {
+    list = encodeURI(list)
+    member = encodeURI(member)
     try {
-        await IframeMessageProxy.sendMessage({
-            action: 'sendCommand',
-            content: {
-                destination: 'MessagingHubService',
-                command: {
-                    method: 'delete',
-                    uri: `/lists/${list}/recipients/${member}`,
-                    to: 'postmaster@broadcast.msging.net'
-                }
-            }
-        })
+      await IframeMessageProxy.sendMessage({
+        action: 'sendCommand',
+        content: {
+          destination: 'MessagingHubService',
+          command: {
+            method: 'delete',
+            uri: `/lists/${list}/recipients/${member}`,
+            to: 'postmaster@broadcast.msging.net',
+          },
+        },
+      })
 
-
-        return 1;
-
+      return 1
     } catch (error) {
-        errorToast(`Error removing ${member} from list`);
-        return;
+      errorToast(`Error removing ${member} from list`)
+      return
     }
-}
-export const addMemberCollection = async (list, contacts) => {
-    let count = 0;
+  }
+  static addMemberCollection = async (list, contacts) => {
+    let count = 0
     for (const element of contacts) {
-        count += await addMember(list, element.identity);
+      count += await this.addMember(list, element.identity)
     }
 
-    successToast(`${count} contacts added into ${list}`);
-}
-const addMember = async (list, contact) => {
-    list = encodeURI(list);
+    successToast(`${count} contacts added into ${list}`)
+  }
+  static addMember = async (list, contact) => {
+    list = encodeURI(list)
     try {
-        await IframeMessageProxy.sendMessage({
-            action: 'sendCommand',
-            content: {
-                destination: 'MessagingHubService',
-                command: {
-                    method: 'set',
-                    uri: `/lists/${list}/recipients`,
-                    to: 'postmaster@broadcast.msging.net',
-                    type: "application/vnd.lime.identity",
-                    resource: contact
-                }
-            }
-        })
+      await IframeMessageProxy.sendMessage({
+        action: 'sendCommand',
+        content: {
+          destination: 'MessagingHubService',
+          command: {
+            method: 'set',
+            uri: `/lists/${list}/recipients`,
+            to: 'postmaster@broadcast.msging.net',
+            type: 'application/vnd.lime.identity',
+            resource: contact,
+          },
+        },
+      })
 
-        return 1;
-
+      return 1
     } catch (error) {
-        errorToast(`Error adding ${contact} into ${list}`);
-        return;
+      errorToast(`Error adding ${contact} into ${list}`)
+      return
     }
-
-
-}
-export const getLists = async () => {
+  }
+  static getLists = async () => {
     try {
-        const { response: { items } } = await IframeMessageProxy.sendMessage({
-            action: 'sendCommand',
-            content: {
-                destination: 'MessagingHubService',
-                command: {
-                    method: 'get',
-                    uri: '/lists?$take=5000',
-                    to: 'postmaster@broadcast.msging.net'
-                }
-            }
-        })
+      const {
+        response: { items },
+      } = await IframeMessageProxy.sendMessage({
+        action: 'sendCommand',
+        content: {
+          destination: 'MessagingHubService',
+          command: {
+            method: 'get',
+            uri: '/lists?$take=5000',
+            to: 'postmaster@broadcast.msging.net',
+          },
+        },
+      })
 
-        return items;
+      return items
     } catch (error) {
-        errorToast("Error loading lists");
-        return [];
+      errorToast('Error loading lists')
+      return []
     }
-
-
-
-}
-export const getMembers = async (list, pagination) => {
-    list = encodeURI(list);
+  }
+  static getMembers = async (list, pagination) => {
+    list = encodeURI(list)
     try {
-        const { response } = await IframeMessageProxy.sendMessage({
-            action: 'sendCommand',
-            content: {
-                destination: 'MessagingHubService',
-                command: {
-                    method: 'get',
-                    uri: `/lists/${list}/recipients` + generateLinePagination(pagination * 20),
-                    to: 'postmaster@broadcast.msging.net'
-                }
-            }
-        })
+      const { response } = await IframeMessageProxy.sendMessage({
+        action: 'sendCommand',
+        content: {
+          destination: 'MessagingHubService',
+          command: {
+            method: 'get',
+            uri:
+              `/lists/${list}/recipients` +
+              generateLinePagination(pagination * 20),
+            to: 'postmaster@broadcast.msging.net',
+          },
+        },
+      })
 
-        return response;
+      return response
     } catch (error) {
-        errorToast(`Error loading member from ${list}`);
-        return DEFAULT_DATA;
+      errorToast(`Error loading member from ${list}`)
+      return DEFAULT_DATA
     }
-
+  }
 }

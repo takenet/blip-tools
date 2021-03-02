@@ -5,7 +5,7 @@ import icons from './defs.svg'
 
 export const BlipIconComponent = ({
   name,
-  color='blip-light',
+  color = 'blip-light',
   className,
   solid,
 }) => {
@@ -17,7 +17,10 @@ export const BlipIconComponent = ({
       width="1em"
       height="1em"
     >
-      <use xlinkHref={`${icons}#${name}${solid ? '-solid' : '-outline'}`} className={`bp-icon--${color}`}/>
+      <use
+        xlinkHref={`${icons}#${name}${solid ? '-solid' : '-outline'}`}
+        className={`bp-icon--${color}`}
+      />
     </svg>
   )
 }

@@ -1,4 +1,4 @@
-export const localization =  {
+export const localization = {
   pt: {
     selected: 'selected',
     emptyMessage: 'No data',

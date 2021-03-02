@@ -16,8 +16,7 @@
                     },
                     "$invalid": false
                 },
-                "$invalid": false,
-                "$$hashKey": "object:9132"
+                "$invalid": false
             }
         ],
         "$conditionOutputs": [
@@ -29,13 +28,12 @@
                         "comparison": "matches",
                         "values": [
                             ".*"
-                        ],
-                        "$$hashKey": "object:9158"
+                        ]
                     }
                 ],
                 "$connId": "con_3",
                 "$invalid": false,
-                "$$hashKey": "object:9138"
+                "$id": "bd3c68bc-e736-4a12-9edf-f5a80d29c8f7"
             }
         ],
         "$enteringCustomActions": [],
@@ -89,7 +87,8 @@
                     }
                 ],
                 "$connId": "con_8",
-                "$invalid": false
+                "$invalid": false,
+                "$id": "745d47a0-46fe-4fd7-984a-07eaff369f1a"
             }
         ],
         "$enteringCustomActions": [],
@@ -137,7 +136,6 @@
                         "position": "left"
                     }
                 },
-                "$$hashKey": "object:450",
                 "$invalid": false
             },
             {
@@ -159,7 +157,6 @@
                         "position": "left"
                     }
                 },
-                "$$hashKey": "object:451",
                 "$invalid": false
             },
             {
@@ -177,7 +174,6 @@
                     },
                     "$invalid": false
                 },
-                "$$hashKey": "object:452",
                 "$invalid": false
             }
         ],
@@ -191,12 +187,11 @@
                         "comparison": "matches",
                         "values": [
                             ".*"
-                        ],
-                        "$$hashKey": "object:6543"
+                        ]
                     }
                 ],
                 "$invalid": false,
-                "$$hashKey": "object:6523"
+                "$id": "6a196347-11c9-418b-b224-0cb7db43eb2c"
             }
         ],
         "$enteringCustomActions": [
@@ -208,8 +203,7 @@
                     "extras": {},
                     "category": "AtendimentosTotais",
                     "action": "AtendimentosTotais"
-                },
-                "$$hashKey": "object:3410"
+                }
             }
         ],
         "$leavingCustomActions": [],
@@ -256,8 +250,7 @@
                         "position": "left"
                     }
                 },
-                "$invalid": false,
-                "$$hashKey": "object:4369"
+                "$invalid": false
             },
             {
                 "action": {
@@ -278,8 +271,7 @@
                         "position": "left"
                     }
                 },
-                "$invalid": false,
-                "$$hashKey": "object:4370"
+                "$invalid": false
             },
             {
                 "input": {
@@ -296,8 +288,7 @@
                     },
                     "$invalid": false
                 },
-                "$invalid": false,
-                "$$hashKey": "object:4371"
+                "$invalid": false
             }
         ],
         "$conditionOutputs": [],
@@ -336,8 +327,8 @@
                     },
                     "$invalid": false
                 },
-                "$$hashKey": "object:1019",
-                "$invalid": false
+                "$invalid": false,
+                "$$hashKey": "object:4628"
             }
         ],
         "$conditionOutputs": [
@@ -351,12 +342,13 @@
                         "values": [
                             "false"
                         ],
-                        "$$hashKey": "object:3446",
-                        "variable": "isWorkTime"
+                        "variable": "isWorkTime",
+                        "$$hashKey": "object:4822"
                     }
                 ],
                 "$invalid": false,
-                "$$hashKey": "object:3423"
+                "$id": "36d9b8e1-8d7a-44d1-a71a-f436fd3cf4d1",
+                "$$hashKey": "object:4800"
             },
             {
                 "stateId": "95118c04-1f32-40df-b1b0-54fb24fa2fc7",
@@ -368,12 +360,13 @@
                         "values": [
                             "true"
                         ],
-                        "$$hashKey": "object:3519",
-                        "variable": "isWorkTime"
+                        "variable": "isWorkTime",
+                        "$$hashKey": "object:4849"
                     }
                 ],
                 "$invalid": false,
-                "$$hashKey": "object:3424"
+                "$id": "aef9fe2f-4254-4a27-bfec-b6e71d2bf3d3",
+                "$$hashKey": "object:4801"
             }
         ],
         "$enteringCustomActions": [
@@ -383,7 +376,7 @@
                 "$invalid": false,
                 "settings": {
                     "function": "run",
-                    "source": "/**\n            * All input variables needs to be passed as function param;\n            * Objects received as param needs to be parsed. Ex.: JSON.parse(inputVariable1);\n            * Objects returned needs to be stringfied. Ex.: JSON.stringify(inputVariable1);\n            **/\nfunction run() {\n  let workSchedule = [\n    {\n      num: 0,\n      name: \"Sunday\",\n      portugueseName: \"Domingo\",\n      workTime: [\n        {\n          start: \"8:30\",\n          end: \"12:00\"\n        }\n      ]\n    },\n    {\n      num: 1,\n      name: \"Monday\",\n      portugueseName: \"Segunda-feira\",\n      workTime: [\n        {\n          start: \"8:30\",\n          end: \"12:00\"\n        },\n        {\n          start: \"13:00\",\n          end: \"15:00\"\n        },\n        {\n          start: \"15:30\",\n          end: \"18:00\"\n        }\n      ]\n    },\n    {\n      num: 2,\n      name: \"Tuesday\",\n      portugueseName: \"Terça-feira\",\n      workTime: [\n        {\n          start: \"8:30\",\n          end: \"18:00\"\n        }\n      ]\n    },\n    {\n      num: 3,\n      name: \"Wednesday\",\n      portugueseName: \"Quarta-feira\",\n      workTime: [\n        {\n          start: \"8:30\",\n          end: \"12:00\"\n        },\n        {\n          start: \"13:00\",\n          end: \"18:00\"\n        }\n      ]\n    },\n    {\n      num: 4,\n      name: \"Thursday\",\n      portugueseName: \"Quinta-feira\",\n      workTime: [\n        {\n          start: \"8:30\",\n          end: \"12:00\"\n        },\n        {\n          start: \"13:00\",\n          end: \"18:00\"\n        }\n      ]\n    },\n    {\n      num: 5,\n      name: \"Friday\",\n      portugueseName: \"Sexta-feira\",\n      workTime: [\n        {\n          start: \"8:30\",\n          end: \"12:00\"\n        },\n        {\n          start: \"13:00\",\n          end: \"18:00\"\n        }\n      ]\n    },\n    {\n      num: 6,\n      name: \"Saturday\",\n      portugueseName: \"Sábado\",\n      workTime: [\n        {\n          start: \"8:30\",\n          end: \"12:00\"\n        }\n      ]\n    }\n  ];\n\n  return JSON.stringify(workSchedule); //Return value will be saved as \"Return value variable\" field name\n}",
+                    "source": "function run() {\n let workSchedule = [\n    {\n        \"num\": 1,\n        \"name\": \"Monday\",\n        \"portugueseName\": \"Segunda\",\n        \"workTime\": [\n            {\n                \"start\": \"08:30\",\n                \"end\": \"12:00\"\n            },\n            {\n                \"start\": \"13:00\",\n                \"end\": \"18:00\"\n            }\n        ]\n    },\n    {\n        \"num\": 2,\n        \"name\": \"Tuesday\",\n        \"portugueseName\": \"Terça\",\n        \"workTime\": [\n            {\n                \"start\": \"08:30\",\n                \"end\": \"18:00\"\n            }\n        ]\n    },\n    {\n        \"num\": 3,\n        \"name\": \"Wednesday\",\n        \"portugueseName\": \"Quarta\",\n        \"workTime\": [\n            {\n                \"start\": \"08:30\",\n                \"end\": \"12:00\"\n            },\n            {\n                \"start\": \"13:00\",\n                \"end\": \"18:00\"\n            }\n        ]\n    },\n    {\n        \"num\": 4,\n        \"name\": \"Thursday\",\n        \"portugueseName\": \"Quinta\",\n        \"workTime\": [\n            {\n                \"start\": \"08:30\",\n                \"end\": \"18:00\"\n            }\n        ]\n    },\n    {\n        \"num\": 5,\n        \"name\": \"Friday\",\n        \"portugueseName\": \"Sexta\",\n        \"workTime\": [\n            {\n                \"start\": \"08:30\",\n                \"end\": \"18:00\"\n            }\n        ]\n    },\n    {\n        \"num\": 6,\n        \"name\": \"Saturday\",\n        \"portugueseName\": \"Sábado\",\n        \"workTime\": [\n            {\n                \"start\": \"08:30\",\n                \"end\": \"12:00\"\n            }\n        ]\n    }\n];\n return JSON.stringify(workSchedule); //Return value will be saved as \"Return value variable\" field name\n }",
                     "inputVariables": [],
                     "outputVariable": "workSchedule"
                 },
@@ -395,14 +388,13 @@
                 "$invalid": false,
                 "settings": {
                     "function": "run",
-                    "source": "// Receive the variables as parameters\nfunction run(offset, weekSchedule) {\n    offset = parseInt(offset);\n    weekSchedule = JSON.parse(weekSchedule);\n    let today = nowUTC(offset);\n    if (isWorkDay(today, weekSchedule)) {\n        let todaySchedule = getTodaySchedule(weekSchedule, today);\n        let intervalTime = getIntervalTime(todaySchedule, today);\n        return checkTime(intervalTime, today);\n    }\n    return false;\n}\nfunction getIntervalTime(todaySchedule, today) {\n    let intervalTime = [];\n    for (let i = 0; i < todaySchedule.workTime.length; i++) {\n        intervalTime.push({\n            start: utcDate(todaySchedule.workTime[i].start, today),\n            end: utcDate(todaySchedule.workTime[i].end, today)\n        });\n    }\n    return intervalTime;\n}\nfunction checkTime(intervalTime, today) {\n    for (let i = 0; i < intervalTime.length; i++) {\n        if (today - intervalTime[i].start > 0 && intervalTime[i].end - today > 0)\n            return true;\n    }\n    return false;\n}\nfunction getTodaySchedule(weekSchedule, today) {\n    for (let i = 0; i < weekSchedule.length; i++) {\n        if (weekSchedule[i].num == today.getDay()) return weekSchedule[i];\n    }\n}\n//Get now UTC Date\nfunction nowUTC(offset) {\n    let now = new Date();\n    let utc_timestamp = Date.UTC(\n        now.getUTCFullYear(),\n        now.getUTCMonth(),\n        now.getUTCDate(),\n        now.getUTCHours(),\n        now.getUTCMinutes(),\n        now.getUTCSeconds(),\n        now.getUTCMilliseconds()\n    );\n    return new Date(utc_timestamp + offset * 3600 * 1000);\n}\n//Get UTC Date\nfunction utcDate(timeString, today) {\n    let hour = getValueByString(\"hour\", timeString);\n    let minutes = getValueByString(\"minutes\", timeString);\n    let utc_timestamp = Date.UTC(\n        today.getUTCFullYear(),\n        today.getUTCMonth(),\n        today.getUTCDate(),\n        hour,\n        minutes,\n        0,\n        0\n    );\n    return new Date(utc_timestamp);\n}\n//Get hour/minute by string with pattern HH:mm\nfunction getValueByString(type, timeString) {\n    if (type === \"hour\") {\n        return parseInt(timeString.substring(0, timeString.indexOf(\":\")));\n    } else if (type === \"minutes\") {\n        return parseInt(\n            timeString.substring(timeString.indexOf(\":\") + 1, timeString.length)\n        );\n    }\n    return 0;\n}\n//Get if today is a work day\nfunction isWorkDay(today, workDays) {\n    for (let i = 0; i < workDays.length; i++) {\n        if (workDays[i].num == today.getDay().toString()) return true;\n    }\n    return false;\n}",
+                    "source": "//v1.2\n// The default offset if the offset has not been set\nconst DEFAULT_OFFSET = -3;\n\n// Receive the variables as parameters\nfunction run(offset, weekSchedule) {\n   \n    offset = !isNaN(parseInt(offset))? parseInt(offset) : DEFAULT_OFFSET;\n    \n    weekSchedule = JSON.parse(weekSchedule);\n    let today = nowUTC(offset);\n    if (isWorkDay(today, weekSchedule)) {\n        let todaySchedule = getTodaySchedule(weekSchedule, today);\n        let intervalTime = getIntervalTime(todaySchedule, today);\n        return checkTime(intervalTime, today);\n    }\n    return false;\n}\nfunction getIntervalTime(todaySchedule, today) {\n    let intervalTime = [];\n    for (let i = 0; i < todaySchedule.workTime.length; i++) {\n        intervalTime.push({\n            start: utcDate(todaySchedule.workTime[i].start, today),\n            end: utcDate(todaySchedule.workTime[i].end, today)\n        });\n    }\n    return intervalTime;\n}\nfunction checkTime(intervalTime, today) {\n    for (let i = 0; i < intervalTime.length; i++) {\n        if (today - intervalTime[i].start > 0 && intervalTime[i].end - today > 0)\n            return true;\n    }\n    return false;\n}\nfunction getTodaySchedule(weekSchedule, today) {\n    for (let i = 0; i < weekSchedule.length; i++) {\n        if (weekSchedule[i].num == today.getDay()) return weekSchedule[i];\n    }\n}\n//Get now UTC Date\nfunction nowUTC(offset) {\n    let now = new Date();\n    let utc_timestamp = Date.UTC(\n        now.getUTCFullYear(),\n        now.getUTCMonth(),\n        now.getUTCDate(),\n        now.getUTCHours(),\n        now.getUTCMinutes(),\n        now.getUTCSeconds(),\n        now.getUTCMilliseconds()\n    );\n    return new Date(utc_timestamp + offset * 3600 * 1000);\n}\n//Get UTC Date\nfunction utcDate(timeString, today) {\n    let hour = getValueByString(\"hour\", timeString);\n    let minutes = getValueByString(\"minutes\", timeString);\n    let utc_timestamp = Date.UTC(\n        today.getUTCFullYear(),\n        today.getUTCMonth(),\n        today.getUTCDate(),\n        hour,\n        minutes,\n        0,\n        0\n    );\n    return new Date(utc_timestamp);\n}\n//Get hour/minute by string with pattern HH:mm\nfunction getValueByString(type, timeString) {\n    if (type === \"hour\") {\n        return parseInt(timeString.substring(0, timeString.indexOf(\":\")));\n    } else if (type === \"minutes\") {\n        return parseInt(\n            timeString.substring(timeString.indexOf(\":\") + 1, timeString.length)\n        );\n    }\n    return 0;\n}\n//Get if today is a work day\nfunction isWorkDay(today, workDays) {\n    for (let i = 0; i < workDays.length; i++) {\n        if (workDays[i].num == today.getDay().toString()) return true;\n    }\n    return false;\n}",
                     "inputVariables": [
                         "config.dateTimeOffset",
                         "workSchedule"
                     ],
                     "outputVariable": "isWorkTime"
                 },
-                "$$hashKey": "object:3809",
                 "conditions": []
             }
         ],
@@ -441,8 +433,8 @@
                     },
                     "$invalid": false
                 },
-                "$$hashKey": "object:1162",
-                "$invalid": false
+                "$invalid": false,
+                "$$hashKey": "object:4153"
             }
         ],
         "$conditionOutputs": [
@@ -456,12 +448,13 @@
                         "values": [
                             "false"
                         ],
-                        "$$hashKey": "object:15320",
-                        "variable": "hasAttendant"
+                        "variable": "hasAttendant",
+                        "$$hashKey": "object:4347"
                     }
                 ],
                 "$invalid": false,
-                "$$hashKey": "object:15309"
+                "$id": "545bbd69-472a-4ee8-9200-118e0181e44c",
+                "$$hashKey": "object:4325"
             },
             {
                 "stateId": "4c0d9be0-bd3d-4e72-b105-a2ac741e5149",
@@ -473,12 +466,13 @@
                         "values": [
                             "true"
                         ],
-                        "$$hashKey": "object:29949",
-                        "variable": "hasAttendant"
+                        "variable": "hasAttendant",
+                        "$$hashKey": "object:4374"
                     }
                 ],
                 "$invalid": false,
-                "$$hashKey": "object:29938"
+                "$id": "aa15bee7-2877-475b-a0d7-d995a74d4089",
+                "$$hashKey": "object:4326"
             }
         ],
         "$enteringCustomActions": [
@@ -496,8 +490,7 @@
                     "uri": "https://msging.net/commands",
                     "responseStatusVariable": "status",
                     "responseBodyVariable": "result"
-                },
-                "$$hashKey": "object:10425"
+                }
             },
             {
                 "type": "ExecuteScript",
@@ -511,7 +504,6 @@
                     ],
                     "outputVariable": "hasAttendant"
                 },
-                "$$hashKey": "object:11605",
                 "conditions": []
             }
         ],
@@ -526,7 +518,7 @@
         "$title": "3.0 - Verifica Disponibilidade Atendentes",
         "$position": {
             "top": "229px",
-            "left": "839px"
+            "left": "840px"
         },
         "$invalidContentActions": false,
         "$invalidOutputs": false,
@@ -554,8 +546,7 @@
                         "position": "left"
                     }
                 },
-                "$invalid": false,
-                "$$hashKey": "object:7179"
+                "$invalid": false
             },
             {
                 "action": {
@@ -582,8 +573,7 @@
                         "position": "left"
                     }
                 },
-                "$invalid": false,
-                "$$hashKey": "object:18982"
+                "$invalid": false
             },
             {
                 "input": {
@@ -601,7 +591,6 @@
                     },
                     "$invalid": false
                 },
-                "$$hashKey": "object:1457",
                 "$invalid": false
             }
         ],
@@ -616,7 +605,6 @@
                     "category": "Solicitação",
                     "action": "Fora Horario Atendimento"
                 },
-                "$$hashKey": "object:2108",
                 "conditions": []
             },
             {
@@ -671,7 +659,6 @@
                     },
                     "$invalid": false
                 },
-                "$$hashKey": "object:2535",
                 "$invalid": false
             }
         ],
@@ -696,10 +683,10 @@
                         ]
                     }
                 ],
-                "$$hashKey": "object:2539",
                 "$invalid": false,
                 "stateId": "2b9bfb62-6346-4762-99ab-733d0c00d1a3",
-                "$connId": "con_38"
+                "$connId": "con_38",
+                "$id": "3bf9868d-1272-485f-9e6e-196895593903"
             },
             {
                 "$isDeskOutput": true,
@@ -721,10 +708,10 @@
                         ]
                     }
                 ],
-                "$$hashKey": "object:2540",
                 "$invalid": false,
                 "stateId": "2b9bfb62-6346-4762-99ab-733d0c00d1a3",
-                "$connId": "con_43"
+                "$connId": "con_43",
+                "$id": "87cc5155-8ead-46bc-bd70-57d839f19f00"
             }
         ],
         "$enteringCustomActions": [
@@ -779,8 +766,7 @@
                         "position": "left"
                     }
                 },
-                "$invalid": false,
-                "$$hashKey": "object:8877"
+                "$invalid": false
             },
             {
                 "action": {
@@ -801,8 +787,7 @@
                         "position": "left"
                     }
                 },
-                "$invalid": false,
-                "$$hashKey": "object:8878"
+                "$invalid": false
             },
             {
                 "action": {
@@ -829,8 +814,7 @@
                         "position": "left"
                     }
                 },
-                "$invalid": false,
-                "$$hashKey": "object:8323"
+                "$invalid": false
             },
             {
                 "action": {
@@ -851,8 +835,7 @@
                         "position": "left"
                     }
                 },
-                "$invalid": false,
-                "$$hashKey": "object:8324"
+                "$invalid": false
             },
             {
                 "input": {
@@ -871,7 +854,6 @@
                     "$invalid": false,
                     "variable": "score"
                 },
-                "$$hashKey": "object:2716",
                 "$invalid": false
             },
             {
@@ -904,8 +886,7 @@
                         "position": "left"
                     }
                 },
-                "$invalid": false,
-                "$$hashKey": "object:31269"
+                "$invalid": false
             },
             {
                 "action": {
@@ -931,8 +912,7 @@
                         "position": "left"
                     }
                 },
-                "$invalid": false,
-                "$$hashKey": "object:31270"
+                "$invalid": false
             }
         ],
         "$conditionOutputs": [],
@@ -949,8 +929,7 @@
                         "score"
                     ],
                     "outputVariable": "score"
-                },
-                "$$hashKey": "object:10000"
+                }
             },
             {
                 "type": "TrackEvent",
@@ -960,8 +939,7 @@
                     "extras": {},
                     "category": "Score",
                     "action": "{{score}}"
-                },
-                "$$hashKey": "object:31556"
+                }
             }
         ],
         "$inputSuggestions": [],
@@ -1008,8 +986,7 @@
                         "position": "left"
                     }
                 },
-                "$invalid": false,
-                "$$hashKey": "object:14938"
+                "$invalid": false
             },
             {
                 "action": {
@@ -1030,8 +1007,7 @@
                         "position": "left"
                     }
                 },
-                "$invalid": false,
-                "$$hashKey": "object:14939"
+                "$invalid": false
             },
             {
                 "input": {
@@ -1049,7 +1025,6 @@
                     },
                     "$invalid": false
                 },
-                "$$hashKey": "object:14387",
                 "$invalid": false
             }
         ],
@@ -1064,7 +1039,6 @@
                     "category": "Solicitação",
                     "action": "Sem Atendente"
                 },
-                "$$hashKey": "object:2563",
                 "conditions": []
             },
             {
@@ -1076,7 +1050,6 @@
                     "category": "Atendentes Indisponíveis",
                     "action": "Atendentes Indisponíveis"
                 },
-                "$$hashKey": "object:2135",
                 "conditions": []
             }
         ],
@@ -1125,8 +1098,7 @@
                         "position": "left"
                     }
                 },
-                "$invalid": false,
-                "$$hashKey": "object:28804"
+                "$invalid": false
             },
             {
                 "action": {
@@ -1147,8 +1119,7 @@
                         "position": "left"
                     }
                 },
-                "$invalid": false,
-                "$$hashKey": "object:28805"
+                "$invalid": false
             },
             {
                 "action": {
@@ -1175,8 +1146,7 @@
                         "position": "left"
                     }
                 },
-                "$invalid": false,
-                "$$hashKey": "object:30858"
+                "$invalid": false
             },
             {
                 "action": {
@@ -1197,8 +1167,7 @@
                         "position": "left"
                     }
                 },
-                "$invalid": false,
-                "$$hashKey": "object:30859"
+                "$invalid": false
             },
             {
                 "input": {
@@ -1215,7 +1184,6 @@
                     },
                     "$invalid": false
                 },
-                "$$hashKey": "object:28400",
                 "$invalid": false
             }
         ],
@@ -1229,12 +1197,11 @@
                         "comparison": "matches",
                         "values": [
                             ".*"
-                        ],
-                        "$$hashKey": "object:30637"
+                        ]
                     }
                 ],
                 "$invalid": false,
-                "$$hashKey": "object:30617"
+                "$id": "fa53ca05-1b94-4b47-8457-ac8315d9e362"
             }
         ],
         "$enteringCustomActions": [
@@ -1246,8 +1213,7 @@
                     "extras": {},
                     "category": "AtendimentosRealizados",
                     "action": "AtendimentosRealizados"
-                },
-                "$$hashKey": "object:1433"
+                }
             }
         ],
         "$leavingCustomActions": [],

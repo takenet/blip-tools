@@ -3,11 +3,18 @@ import PropTypes from 'prop-types'
 
 export const BlipBadgeComponent = ({
   value,
-  color='warning',
-  textColor='whisper',
+  color = 'warning',
+  textColor = 'whisper',
   ...otherProps
 }) => {
-  return <span {...otherProps} className={`badge bp-fs-7 ph1 br-100 bp-c-${textColor} bp-bg-${color}`}>{value}</span>
+  return (
+    <span
+      {...otherProps}
+      className={`badge bp-fs-7 ph1 br-100 bp-c-${textColor} bp-bg-${color}`}
+    >
+      {value}
+    </span>
+  )
 }
 
 BlipBadgeComponent.propTypes = {

@@ -11,7 +11,11 @@ export const InfoIconComponent = ({ text, place = 'bottom' }) => {
   return (
     <>
       <img src={InfoIcon} data-for={tooltipId} data-tip={text} alt={text} />
-      <ReactTooltip className="tooltip-info-icon" place={place} id={tooltipId} />
+      <ReactTooltip
+        className="tooltip-info-icon"
+        place={place}
+        id={tooltipId}
+      />
     </>
   )
 }
