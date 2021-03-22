@@ -1,0 +1,76 @@
+@import './globals';
+@import '~blip-toolkit/dist/scss/main';
+@import 'tachyons';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: $bp-ff;
+}
+
+body {
+  background-color: $bp-color-whisper;
+  color: $bp-color-rooftop;
+}
+
+a {
+  color: $bp-color-blip-light;
+  text-decoration: none;
+}
+
+#main {
+  margin: 10px auto;
+  width: 80%;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.bp-tabs-container .bp-tab-content {
+  padding-top: 20px;
+}
+
+.w6 {
+  width: 24rem;
+}
+
+
+._loading_overlay_content {
+  color: black;
+}
+
+.css-50etie svg circle {
+  stroke: black;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+   color:    #b0b0b0 !important;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:    #b0b0b0 !important;
+ opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    #b0b0b0 !important;
+ opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color:    #b0b0b0 !important;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+  color:    #b0b0b0 !important;
+}
+
+::placeholder { /* Most modern browsers support this now. */
+  color:    #b0b0b0 !important;
+}
