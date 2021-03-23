@@ -9,4 +9,4 @@ A public space for BLiP community tools
 4. [Blip Contact Plugin- This is a Blip example plugin made to help users manage to add and update contacts with ease.](https://github.com/takenet/blip-tools/tree/master/BLiP%20Contact%20Plugin)
 5. [Blip Build AI Model Analysis File - This is a Blip tool made to help users to build AI Model Analysis File with ease.](https://github.com/takenet/blip-tools/tree/master/BLiP%20Build%20AI%20Model%20Analysis%20File)
 6. [Blip Close Multiple Tickets - This is a Blip tool made to help users to close multiple tickets with ease.](https://github.com/takenet/blip-tools/tree/master/BLiP%20Close%20Multiple%20Tickets)
-6. [BLiP Plugin&Tool - This is a BLiP example plugin/tool designed to help users create tickets whenever they wish for any contact with ease.](https://github.com/takenet/blip-tools/tree/master/BLiP%20Plugin%26Tool%20-%20Create%20a%20Ticket)
+6. [BLiP Plugin&Tool  Create a Ticket - This is a BLiP example plugin/tool designed to help users create tickets whenever they wish for any contact with ease.](https://github.com/takenet/blip-tools/tree/master/BLiP%20Plugin%26Tool%20-%20Create%20a%20Ticket)
