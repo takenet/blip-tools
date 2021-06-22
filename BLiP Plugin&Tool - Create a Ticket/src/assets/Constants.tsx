@@ -9,4 +9,6 @@ export class Constants {
   static GA_UPDATE_CONTACT = 'Update Contact'
   static GA_LOAD_CONTACT = 'Load Contact'
   static GA_CREATE_TICKET = 'Create a ticket'
+  static HAS_TICKET_VALUE = 'true'
+  static HELP_DESK_HAS_TICKET_KEY = 'helpdeskhasticket'
 }

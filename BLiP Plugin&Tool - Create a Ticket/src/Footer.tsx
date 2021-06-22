@@ -17,7 +17,7 @@ function Footer() {
         <AiOutlineInfoCircle size="28" />
       </a>
       <a
-        href="https://forum.blip.ai/"
+        href={process.env.REACT_APP_INFO_LINK}
         target="_blank"
         rel="noopener noreferrer"
       >

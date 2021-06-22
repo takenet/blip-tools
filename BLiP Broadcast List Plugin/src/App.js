@@ -18,13 +18,12 @@ import {
   AiOutlineInfoCircle,
 } from 'react-icons/ai'
 import { TiSocialAtCircular } from 'react-icons/ti'
-import { Alert } from 'react-bootstrap'
 import ReactGA from 'react-ga'
 
 function App() {
   const [isHttp, setIsHttp] = useState(false)
   const [isFormHttpFilled, setIsFormHttpFilled] = useState(false)
-  const [show, setShow] = useState(true)
+  //const [show, setShow] = useState(true)
 
   const fillHeader = (e, { key, url }) => {
     e.preventDefault()
@@ -32,37 +31,40 @@ function App() {
     setIsFormHttpFilled(true)
   }
 
-  const AlertDismissible = () => {
-    if (show) {
-      return (
-        <Alert variant="info" onClose={() => setShow(false)} dismissible>
-          {isHttp ? (
-            <p>
-              You can also use this tool as a plugin,{' '}
-              <Alert.Link href={`${process.env.REACT_APP_INFO_LINK}`}>
-                click here
-              </Alert.Link>{' '}
-              to learn more how to do this.
-            </p>
-          ) : (
-            <p>
-              You can also use this plugin as a tool,{' '}
-              <u>
-                <Alert.Link href={`${process.env.REACT_APP_INFO_LINK}`}>
-                  click here
-                </Alert.Link>
-              </u>{' '}
-              to learn more how to do this.
-            </p>
-          )}
-        </Alert>
-      )
-    }
-    return <></>
-  }
+  // const AlertDismissible = () => {
+  //   if (show) {
+  //     return (
+  //       <Alert variant="info" onClose={() => setShow(false)} dismissible>
+  //         {isHttp ? (
+  //           <p>
+  //             You can also use this tool as a plugin,{' '}
+  //             <Alert.Link href={`${process.env.REACT_APP_INFO_LINK}`}>
+  //               click here
+  //             </Alert.Link>{' '}
+  //             to learn more how to do this.
+  //           </p>
+  //         ) : (
+  //           <p>
+  //             You can also use this plugin as a tool,{' '}
+  //             <u>
+  //               <Alert.Link href={`${process.env.REACT_APP_INFO_LINK}`}>
+  //                 click here
+  //               </Alert.Link>
+  //             </u>{' '}
+  //             to learn more how to do this.
+  //           </p>
+  //         )}
+  //       </Alert>
+  //     )
+  //   }
+  //   return <></>
+  // }
 
   useEffect(() => {
-    ReactGA.initialize(process.env.REACT_APP_GA_KEY)
+    ReactGA.initialize(process.env.REACT_APP_GA_KEY, { useExistingGa: true })
+    ReactGA.ga('create', process.env.REACT_APP_GA_KEY, 'auto', {
+      cookieFlags: 'SameSite=None; Secure',
+    })
     withLoading(async () => {
       new BlipTabs('tab-nav')
       setIsHttp(!(await ApplicationService.ping()))
@@ -85,7 +87,7 @@ function App() {
           draggable
           pauseOnHover
         />
-        <AlertDismissible />
+        {/* <AlertDismissible /> */}
         <PageHeader title={title} />
         <PageTemplate title={title}>
           {isHttp && !isFormHttpFilled ? (

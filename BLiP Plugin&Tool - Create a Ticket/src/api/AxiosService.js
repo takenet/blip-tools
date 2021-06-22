@@ -197,6 +197,29 @@ export class AxiosService {
       return
     }
   }
+  static setContext = async (contextName, resource, contactId, owner) => {
+    const body = {
+      id: uuidv4(),
+      method: 'set',
+      to: 'postmaster@msging.net',
+      uri:
+        `${owner ? `lime://${owner}` : ''}` +
+        `/contexts/${contactId}/${contextName}`,
+      type: 'text/plain',
+      resource: `${resource}`,
+    }
+    try {
+      const response = await axios.post(this.url, body, {
+        headers: this.headers,
+      })
+      await this.wait(1000)
+
+      return response
+    } catch (error) {
+      AxiosCommomService.showErrorToast(`Error setting context ${error}`)
+      return
+    }
+  }
   static getContacts = async () => {
     const body = {
       id: uuidv4(),

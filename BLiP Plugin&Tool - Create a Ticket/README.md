@@ -1,4 +1,5 @@
 ![Blip-plugin](https://imgur.com/B8dPNgk.png 'Blip-plugin')
+
 # BLiP Plugin/Tool - Create a ticket
 
 This is a BLiP example plugin/tool designed to help users create tickets whenever they wish for any contact with ease.
@@ -9,14 +10,11 @@ Visit the sample [page here](https://blip-create-ticket-plugin-tool.netlify.app)
 
 1. View all contact information.
 
-![View all contact information](./imgs/img1.png)
-2. Update a contact information.
+![View all contact information](./imgs/img1.png) 2. Update a contact information.
 
-![Update a contact information](./imgs/img2.png)
-3. Send a message after create a ticket.
+![Update a contact information](./imgs/img2.png) 3. Send a message after create a ticket.
 
-![Send a message after create a ticket](./imgs/img3.png)
-4. Create a ticket for any contact.
+![Send a message after create a ticket](./imgs/img3.png) 4. Create a ticket for any contact.
 
 ![Create a ticket for any contact](./imgs/img4.png)
 
@@ -37,7 +35,6 @@ Visit the sample [page here](https://blip-create-ticket-plugin-tool.netlify.app)
 }
 ```
 
-
 See the result below:
 ![Define information in advanced settings](./imgs/advanced_configuration.png)
 
@@ -56,7 +53,6 @@ See the result below:
 ## Getting started from this project
 
 1. Download or clone the project from `git`(the recommended way):
-
 
 `git clone https://github.com/takenet/blip-tools.git`
 

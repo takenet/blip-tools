@@ -1,4 +1,4 @@
-# BLiP Broadcast List Plugin/Tool
+# BLiP Broadcast Plugin/Tool
 
 This is a BLiP example plugin/tool made to help users manage distribution lists with ease.
 

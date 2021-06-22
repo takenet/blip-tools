@@ -254,4 +254,17 @@ export class AxiosService {
       return 0
     }
   }
+
+  static addMemberFromFile = async (list, file) => {
+    let count = 0
+    let text = await file.text()
+    text = text.split('\n')
+
+    for (const line of text) {
+      if (line) {
+        count += await this.addMember(list, line)
+      }
+    }
+    this.toast.success(`${count} contacts added into ${list}`)
+  }
 }

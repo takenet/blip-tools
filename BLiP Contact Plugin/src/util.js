@@ -71,22 +71,27 @@ export const buildData = (header, data) => {
     data.forEach(e => {
         let aux = {};
         for (let index = 0; index < header.length; index++) {
-            if (header[index] === "extras" & e.data[index] !== "") {
-                Object.assign(aux, {
-                    ...aux,
-                    [header[index]]: JSON.parse(
-                        e.data[index]
-                            .split("&")
-                            .join(",")
-                            .split("'")
-                            .join('"')
-                    )
-                });
+            try {
+                if (header[index] === "extras" & e.data[index] !== "") {
+                    Object.assign(aux, {
+                        ...aux,
+                        [header[index]]: JSON.parse(
+                            e.data[index]
+                                .split("&")
+                                .join(",")
+                                .split("'")
+                                .join('"')
+                        )
+                    });
+                }
+                else if (e.data[index] !== "")
+                    Object.assign(aux, { ...aux, [header[index]]: e.data[index] });
+            } catch (error) {
+
             }
-            else if (e.data[index] !== "")
-                Object.assign(aux, { ...aux, [header[index]]: e.data[index] });
+
         }
-        items.push(aux);
+        if (Object.keys(aux).length !== 0) items.push(aux);
     });
     return items;
 }
@@ -95,7 +100,7 @@ export const removeEmptyFields = (data) => {
     let items = {};
     for (const key in data) {
         if (data[key] !== "") {
-            items = {...items, [key]: data[key] };
+            items = { ...items, [key]: data[key] };
         }
     }
     return items;

@@ -83,7 +83,7 @@ function App() {
                                 onApplyFilter={handleApplyFilter}
                                 pagination={contacts.pagination}
                                 onChangePagination={handleOnChangePagination}
-                                fileName={application.name}
+                                fileName={application ? application.name : ""}
                             />
                         </div>
 

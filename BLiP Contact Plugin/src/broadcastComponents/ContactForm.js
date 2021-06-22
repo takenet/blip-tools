@@ -28,13 +28,12 @@ function ContactForm({ onAdd }) {
 
     }
 
-    const handleAddExtras = (params) => {
+    const handleAddExtras = () => {
 
         setExtras({
             ...extras,
             [`key${Object.keys(extras).length}`]: { key: '', value: '', actived: true }
         });
-        console.log(extras)
     }
 
     return (

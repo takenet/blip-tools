@@ -53,7 +53,6 @@ function MainPage({ service, commomService, onApplicationError, isHttp }) {
         const desk = application.applicationJson.settings.flow.states.find(
           (e) => e.id.includes(Constants.DESK)
         ).id
-
         setBotFields({
           flowId: application.applicationJson.settings.flow.id,
           deskId: desk,
@@ -122,6 +121,12 @@ function MainPage({ service, commomService, onApplicationError, isHttp }) {
         tunnel.originator,
         tunnel.owner
       )
+      await service.setContext(
+        Constants.HELP_DESK_HAS_TICKET_KEY,
+        Constants.HAS_TICKET_VALUE,
+        tunnel.originator,
+        tunnel.owner
+      )
       setTicket(await service.createTicket(contact.identity))
     })
   }
@@ -140,6 +145,11 @@ function MainPage({ service, commomService, onApplicationError, isHttp }) {
         botFields.deskId,
         contact.identity
       )
+      await service.setContext(
+        Constants.HELP_DESK_HAS_TICKET_KEY,
+        Constants.HAS_TICKET_VALUE,
+        contact.identity
+      )
       setTicket(await service.createTicket(contact.identity))
     })
   }
@@ -153,6 +163,12 @@ function MainPage({ service, commomService, onApplicationError, isHttp }) {
         botFields.deskId,
         contact.identity
       )
+      await service.setContext(
+        Constants.HELP_DESK_HAS_TICKET_KEY,
+        Constants.HAS_TICKET_VALUE,
+        contact.identity
+      )
+
       setTicket(await service.createTicket(contact.identity))
     })
   }
@@ -175,7 +191,6 @@ function MainPage({ service, commomService, onApplicationError, isHttp }) {
   useEffect(() => {
     commomService.withLoading(async () => {
       await fetchApi()
-      ReactGA.initialize(process.env.REACT_APP_GA_KEY)
     })
   }, [service, commomService])
 

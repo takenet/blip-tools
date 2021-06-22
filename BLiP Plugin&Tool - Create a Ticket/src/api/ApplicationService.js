@@ -131,12 +131,14 @@ export class ApplicationService {
           },
         },
       })
+
       return response
     } catch (error) {
       CommomService.showErrorToast(`Error createTicket ${error}`)
       return
     }
   }
+
   static setState = async (flowId, stateId, contactId, owner) => {
     try {
       const response = await IframeMessageProxy.sendMessage({
@@ -154,6 +156,7 @@ export class ApplicationService {
           },
         },
       })
+
       await this.wait(3000)
       return response
     } catch (error) {
@@ -183,6 +186,31 @@ export class ApplicationService {
       return response
     } catch (error) {
       CommomService.showErrorToast(`Error setting masterstate ${error}`)
+      return
+    }
+  }
+
+  static setContext = async (contextName, resource, contactId, owner) => {
+    try {
+      const response = await IframeMessageProxy.sendMessage({
+        action: 'sendCommand',
+        content: {
+          destination: 'MessagingHubService',
+          command: {
+            method: 'set',
+            to: 'postmaster@msging.net',
+            uri:
+              `${owner ? `lime://${owner}` : ''}` +
+              `/contexts/${contactId}/${contextName}`,
+            type: 'text/plain',
+            resource: `${resource}`,
+          },
+        },
+      })
+      await this.wait(1000)
+      return response
+    } catch (error) {
+      CommomService.showErrorToast(`Error setting state ${error}`)
       return
     }
   }

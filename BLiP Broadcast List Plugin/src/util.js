@@ -12,10 +12,19 @@ export const generateLinePagination = (pagination) => {
 export const generateLineFilter = (filter) => {
   var filterLine = ''
   if (filter !== undefined || filter === []) {
-    if (
+    if (filter.condition === 'startswith') {
+      filterLine =
+        '&$filter=(' +
+        filter.condition +
+        '(' +
+        filter.prop +
+        "%2C'" +
+        filter.value.split(' ').join('%20') +
+        "'))"
+    } else if (
       filter.condition === 'substringof' ||
       filter.condition === 'not%20substringof'
-    )
+    ) {
       filterLine =
         '&$filter=(' +
         filter.condition +
@@ -24,7 +33,7 @@ export const generateLineFilter = (filter) => {
         "'%2C" +
         filter.prop +
         '))'
-    else
+    } else {
       filterLine =
         '&$filter=(' +
         filter.prop +
@@ -33,6 +42,7 @@ export const generateLineFilter = (filter) => {
         "%20'" +
         filter.value.split(' ').join('%20') +
         "')"
+    }
   }
   return filterLine
 }

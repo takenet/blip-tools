@@ -8,8 +8,10 @@ import ContactTable from './broadcastComponents/ContactTable'
 import MembersTable from './broadcastComponents/MembersTable'
 import ListSelect from './broadcastComponents/ListSelect'
 import ListForm from './broadcastComponents/ListForm'
+import FileSelect from './broadcastComponents/FileSelect'
 import PropTypes from 'prop-types'
 import ReactGA from 'react-ga'
+import { Tabs, Tab } from 'react-bootstrap'
 
 function MainPage({ service, isHttp }) {
   const [application, setApplication] = useState({})
@@ -104,7 +106,18 @@ function MainPage({ service, isHttp }) {
       setLists(await service.getLists())
     })
   }
-
+  const handleAddFile = async (file) => {
+    ReactGA.event({
+      category: 'Blip Broadcast Plugin',
+      action: 'Add File',
+      label: `${isHttp ? 'Http' : 'Plugin'}`,
+    })
+    withLoading(async () => {
+      await service.addMemberFromFile(listSelected, file)
+      setMembers(await service.getMembers(listSelected, membersPagination))
+      setContacts(await service.getContacts(contactsPagination))
+    })
+  }
   const fetchApi = async () => {
     setLists(await service.getLists())
     setApplication(await service.getApplication())
@@ -170,15 +183,25 @@ function MainPage({ service, isHttp }) {
         />
         <hr />
         {listSelected !== '' && listSelected !== 'Selecione uma lista' && (
-          <ContactTable
-            total={contacts.total}
-            data={contacts.items}
-            minus={members.items}
-            filter={applyFilter}
-            pagination={contactsPagination}
-            setPagination={applyContactsPagination}
-            handleAdd={handleAdd}
-          />
+          <>
+            <Tabs defaultActiveKey="registered" id="uncontrolled-tab-example">
+              <Tab eventKey="registered" title="Registered Contacts">
+                <br />
+                <ContactTable
+                  total={contacts.total}
+                  data={contacts.items}
+                  minus={members.items}
+                  filter={applyFilter}
+                  pagination={contactsPagination}
+                  setPagination={applyContactsPagination}
+                  handleAdd={handleAdd}
+                />
+              </Tab>
+              <Tab eventKey="file" title="Contacts From a File">
+                <FileSelect handleAddFile={handleAddFile} />
+              </Tab>
+            </Tabs>
+          </>
         )}
       </div>
     </div>

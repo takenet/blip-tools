@@ -33,8 +33,6 @@ export const getContactsBase = async (pagination, filter) => {
 
 
 export const addContactBase = async (contact) => {
-    console.log(contact)
-
     try {
         await IframeMessageProxy.sendMessage(
             {

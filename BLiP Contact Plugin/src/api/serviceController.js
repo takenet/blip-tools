@@ -6,7 +6,7 @@ const DEFAULT_DATA = { total: 0, items: [] };
 export const addContactCollections = async (contacts) => {
     let count = 0;
     for (const contact of contacts) {
-        let { status, response } = await addContactBase(contact);
+        let { status } = await addContactBase(contact);
         if (status)
             count++;
         else
@@ -16,9 +16,7 @@ export const addContactCollections = async (contacts) => {
 }
 
 export const addContact = async (contact) => {
-    console.log(contact);
-
-    let { status, response } = await addContactBase(contact);
+    let { status } = await addContactBase(contact);
     if (status)
         successToast(`${contact.identity} successfully added!`);
     else
@@ -30,7 +28,7 @@ export const addContact = async (contact) => {
 export const getContacts = async (pagination, filter) => {
     let { status, response } = await getContactsBase(pagination, filter);
     if (status)
-        return response;
+        return response || DEFAULT_DATA;
     else
         errorToast("Error loading contacts" + response)
 
