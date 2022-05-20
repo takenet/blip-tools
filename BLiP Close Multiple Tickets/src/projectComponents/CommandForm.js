@@ -8,7 +8,7 @@ const CommandForm = ({
 }) => {
     const [key, setkey] = useState('');
     const [url, setUrl] = useState('');
-    const [status, setStatus] = useState({ waiting: false, open: true });
+    const [status, setStatus] = useState({ waiting: false, closedByInactivity: false, open: true });
     const [pagination, setPagination] = useState({ skip: 0, take: 5000 });
     const [identities, setIdentities] = useState({ agent: '', customer: '' });
     const [dates, setDates] = useState({ storage: { select: '<', date: '' }, open: { select: '<', date: '' }, status: { select: '<', date: '' }, lastMessageDate: { select: '<', date: '' } });
@@ -34,7 +34,8 @@ const CommandForm = ({
                 <Form.Group as={Col}>
                     <Form.Label >Status</Form.Label>
                     <Form.Check type='checkbox' label="Waiting" checked={status.waiting} onChange={(e) => { setStatus({ ...status, waiting: e.target.checked }) }} />
-                    <Form.Check disabled type='checkbox' label="Open" checked={status.open} onChange={(e) => { setStatus({ ...status, open: e.target.checked }) }} />
+                    <Form.Check type='checkbox' label="Closed by client inactivity" checked={status.closedByInactivity} onChange={(e) => { setStatus({ ...status, closedByInactivity: e.target.checked }) }} />
+                    <Form.Check type='checkbox' label="Open" checked={status.open} onChange={(e) => { setStatus({ ...status, open: e.target.checked }) }} />
                 </Form.Group>
                 <Form.Group as={Col} >
                     <Form.Label>Skip</Form.Label>
