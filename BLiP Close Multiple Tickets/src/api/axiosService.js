@@ -56,12 +56,26 @@ export const getOpenTickets = async (header, toastError, updateProgressBar) => {
         "Content-Type": "application/json",
         Authorization: `${header.key}`
     };
-
+    let statusFilter = "";
+    if (header.status.open || header.status.waiting || header.status.closedByInactivity)
+    {
+        statusFilter = `and%20(%20`;
+        if(header.status.open){
+            statusFilter += `status%20eq%20'open'`
+        }
+        if(header.status.waiting){
+            statusFilter += (header.status.open) ? `%20or%20status%20eq%20'waiting'` : `status%20eq%20'waiting'`;
+        }
+        if(header.status.closedByInactivity){
+            statusFilter += (header.status.open || header.status.waiting) ? `%20or%20status%20eq%20'ClosedClientInactivity'` : `status%20eq%20'ClosedClientInactivity'`;
+        }
+        statusFilter += ')';
+    }
     const body = {
         "id": uuidv4(),
         "to": "postmaster@desk.msging.net",
         "method": "get",
-        "uri": `/tickets?$filter=status%20eq%20'open'${header.status.waiting ? "%20or%20status%20eq%20'waiting'" : ''}${header.identities.customer ? `%20and%20(substringof('${encodeURI(header.identities.customer)}'%2CCustomerIdentity))` : ''}${header.dates.storage.date ? `%20and%20storageDate%20${header.dates.storage.select === '>' ? 'ge' : 'le'}%20datetimeoffset'${encodeURIComponent(header.dates.storage.date)}'` : ''}${header.dates.open.date ? `%20and%20openDate%20${header.dates.open.select === '>' ? 'ge' : 'le'}%20datetimeoffset'${encodeURIComponent(header.dates.open.date)}'` : ''}${header.dates.status.date ? `%20and%20statusDate%20${header.dates.status.select === '>' ? 'ge' : 'le'}%20datetimeoffset'${encodeURIComponent(header.dates.status.date)}'` : ''}${header.identities.agent ? `%20and%20(AgentIdentity%20eq%20'${encodeURI(header.identities.agent)}')` : ''}&$skip=${header.pagination.skip}&$take=${header.pagination.take}`
+        "uri": `/tickets?$filter=closed%20eq%20false%20${statusFilter}${header.identities.customer ? `%20and%20(substringof('${encodeURI(header.identities.customer)}'%2CCustomerIdentity))` : ''}${header.dates.storage.date ? `%20and%20storageDate%20${header.dates.storage.select === '>' ? 'ge' : 'le'}%20datetimeoffset'${encodeURIComponent(header.dates.storage.date)}'` : ''}${header.dates.open.date ? `%20and%20openDate%20${header.dates.open.select === '>' ? 'ge' : 'le'}%20datetimeoffset'${encodeURIComponent(header.dates.open.date)}'` : ''}${header.dates.status.date ? `%20and%20statusDate%20${header.dates.status.select === '>' ? 'ge' : 'le'}%20datetimeoffset'${encodeURIComponent(header.dates.status.date)}'` : ''}${header.identities.agent ? `%20and%20(AgentIdentity%20eq%20'${encodeURI(header.identities.agent)}')` : ''}&$skip=${header.pagination.skip}&$take=${header.pagination.take}`
     }
     try {
         let response = await axios.post(header.url, body, {
