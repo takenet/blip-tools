@@ -4,20 +4,20 @@ import App from './App'
 import { IframeMessageProxy } from 'iframe-message-proxy'
 import './index.scss'
 import * as serviceWorker from './serviceWorker'
-import { setHeight } from 'api/commomService'
+import { CommomService } from './api/CommomService'
 import { ResizeObserver } from 'resize-observer'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'react-toastify/dist/ReactToastify.css'
 
 IframeMessageProxy.listen()
 
-const rootDiv = document.getElementById("root")
+const rootDiv = document.getElementById('root')
 
 const documentObserver = new ResizeObserver(() => {
-    setHeight(rootDiv.scrollHeight)
+  CommomService.setHeight(rootDiv?.scrollHeight)
 })
 
 documentObserver.observe(rootDiv)
-
 ReactDOM.render(<App />, document.getElementById('root'))
 
 // If you want your app to work offline and load faster, you can change

@@ -23,17 +23,19 @@ const BlipDropdownButtonContainer = ({
     setShowDropdown(!showDropdown)
   }
 
-  return <BlipDropdownButtonComponent
-    buttonClass={buttonClass}
-    dropdownClass={dropdownClass}
-    label={label}
-    arrowSide={arrowSide}
-    showDropdown={showDropdown}
-    toggleDropdown={toggleDropdown}
-    footer={footer}
-  >
-    {children}
-  </BlipDropdownButtonComponent>
+  return (
+    <BlipDropdownButtonComponent
+      buttonClass={buttonClass}
+      dropdownClass={dropdownClass}
+      label={label}
+      arrowSide={arrowSide}
+      showDropdown={showDropdown}
+      toggleDropdown={toggleDropdown}
+      footer={footer}
+    >
+      {children}
+    </BlipDropdownButtonComponent>
+  )
 }
 
 BlipDropdownButtonContainer.propTypes = {

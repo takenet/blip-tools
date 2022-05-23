@@ -7,7 +7,12 @@ describe('Testing Avatar', () => {
   it('Should render avatar with no editing permission', () => {
     const component = render(
       <CommonProvider>
-        <Avatar img="" canEdit={false} changePicLabel="Change pic" onUpdateImage={ () => {} } />
+        <Avatar
+          img=""
+          canEdit={false}
+          changePicLabel="Change pic"
+          onUpdateImage={() => {}}
+        />
       </CommonProvider>
     )
     expect(component).toMatchSnapshot()
@@ -16,7 +21,11 @@ describe('Testing Avatar', () => {
   it('Should render avatar with placeholder', () => {
     const component = render(
       <CommonProvider>
-        <Avatar canEdit={false} changePicLabel="Change pic" onUpdateImage={ () => {} } />
+        <Avatar
+          canEdit={false}
+          changePicLabel="Change pic"
+          onUpdateImage={() => {}}
+        />
       </CommonProvider>
     )
     expect(component).toMatchSnapshot()
@@ -25,7 +34,11 @@ describe('Testing Avatar', () => {
   it('Should show option to change image', () => {
     const component = render(
       <CommonProvider>
-        <Avatar canEdit={true} changePicLabel="Change pic" onUpdateImage={ () => {} } />
+        <Avatar
+          canEdit={true}
+          changePicLabel="Change pic"
+          onUpdateImage={() => {}}
+        />
       </CommonProvider>
     )
     expect(component).toMatchSnapshot()

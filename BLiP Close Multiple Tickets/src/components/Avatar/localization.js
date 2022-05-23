@@ -1,8 +1,8 @@
 export const localization = {
-  pt:{
+  pt: {
     photoUpdateError: 'Erro ao atualizar a foto',
   },
-  en:{
+  en: {
     photoUpdateError: 'Error while updating photo',
   },
 }

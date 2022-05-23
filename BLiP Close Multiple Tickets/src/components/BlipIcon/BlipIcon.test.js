@@ -4,12 +4,12 @@ import { shallow } from 'enzyme'
 
 describe('Testing BlipIcon', () => {
   it('Should render outline icon', () => {
-    const component = shallow(<BlipIcon name='close' />)
+    const component = shallow(<BlipIcon name="close" />)
     expect(component).toMatchSnapshot()
   })
-  
+
   it('Should render solid icon', () => {
-    const component = shallow(<BlipIcon name='close' solid={true} />)
+    const component = shallow(<BlipIcon name="close" solid={true} />)
     expect(component).toMatchSnapshot()
   })
 })

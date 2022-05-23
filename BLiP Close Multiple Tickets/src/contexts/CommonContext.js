@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import { CommonReducer } from 'reducers/CommonReducer'
+import { CommonReducer } from '../reducers/CommonReducer'
 import moment from 'moment'
 import 'moment/locale/pt-br'
 
@@ -25,7 +25,7 @@ const useCommon = () => {
     (loggedUser) => dispatch({ type: 'setLoggedUser', loggedUser }),
     [dispatch]
   )
-  
+
   moment.locale(common.language)
 
   return {
@@ -38,7 +38,10 @@ const useCommon = () => {
 }
 
 const CommonProvider = (props) => {
-  const [common, dispatch] = React.useReducer(CommonReducer, { language: 'pt', loading: false })
+  const [common, dispatch] = React.useReducer(CommonReducer, {
+    language: 'pt',
+    loading: false,
+  })
   const value = React.useMemo(() => [common, dispatch], [common])
   return <CommonContext.Provider value={value} {...props} />
 }

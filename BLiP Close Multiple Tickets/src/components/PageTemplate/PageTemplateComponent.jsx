@@ -1,16 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const PageTemplateComponent = ({
-  children,
-}) => {
-  return <>
-    <div className="pv4">
-      <div className="bp-card bp-card--left-arrow">
-        {children}
+const PageTemplateComponent = ({ children }) => {
+  return (
+    <>
+      <div className="pv4">
+        <div className="bp-card bp-card--left-arrow">{children}</div>
       </div>
-    </div>
-  </>
+    </>
+  )
 }
 
 PageTemplateComponent.propTypes = {

@@ -10,4 +10,3 @@ export const CommonReducer = (state, action) => {
       throw new Error(`CommonReducer: invalid action called ${action.type}`)
   }
 }
-

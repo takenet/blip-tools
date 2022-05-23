@@ -1,43 +1,51 @@
 {
-  "name": "blip-plugin-example",
+  "name": "blip-close-multiple-tickets",
   "version": "0.1.0",
   "private": true,
+  "author": "Caio Freitas",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.27",
-    "@fortawesome/free-brands-svg-icons": "^5.12.1",
-    "@fortawesome/free-solid-svg-icons": "^5.12.1",
-    "@fortawesome/react-fontawesome": "^0.1.8",
-    "@testing-library/jest-dom": "^5.11.0",
-    "@testing-library/react": "^10.4.3",
-    "@testing-library/user-event": "^12.0.11",
-    "axios": "^0.19.2",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.21.1",
     "blip-toolkit": "^5.12.0",
-    "bootstrap": "^4.4.1",
+    "bootstrap": "^4.6.0",
     "iframe-message-proxy": "^1.1.1",
     "moment": "^2.24.0",
     "node-sass": "^4.13.1",
     "react": "^16.12.0",
-    "react-bootstrap": "^1.0.0-beta.16",
-    "react-csv-downloader": "^1.8.0",
+    "react-bootstrap": "^1.5.0",
     "react-dom": "^16.12.0",
-    "react-icons": "^3.9.0",
+    "react-ga": "^3.3.0",
+    "react-icons": "^4.2.0",
+    "react-loading-overlay": "^1.0.1",
     "react-localization": "^1.0.13",
-    "react-papaparse": "^3.0.3",
     "react-scripts": "^3.4.0",
-    "react-toastify": "^6.0.6",
+    "react-toastify": "^7.0.3",
     "resize-observer": "^1.0.0",
     "tachyons": "^4.10.0",
-    "uuid": "^8.3.0"
+    "typescript": "^4.2.3",
+    "uuid": "^8.3.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "CI= react-scripts build",
+    "start": " react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "format": "prettier --write \"**/*.+(ts|tsx|js|jsx|json|css|md)\" && npm run lint:fix "
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ]
   },
+  "eslintIgnore": [
+    "*.test.js",
+    "src/components/*"
+  ],
   "browserslist": {
     "production": [
       ">0.2%",
@@ -48,6 +56,32 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "8.1.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-flowtype": "^5.3.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "2.2.1",
+    "prettier-eslint": "^12.0.0",
+    "prettier-eslint-cli": "^5.0.0"
+  },
+  "babel": {
+    "presets": [
+      "react-app"
     ]
   }
 }

@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react'
 import { BlipTableComponent } from './BlipTableComponent'
 import PropTypes from 'prop-types'
-import { useContentLocalizer } from 'hooks/useContentLocalizer'
+import { useContentLocalizer } from '../../hooks/useContentLocalizer'
 import { localization } from './localization'
 
 const BlipTableContainer = ({
@@ -10,24 +10,27 @@ const BlipTableContainer = ({
   idKey = 'id',
   onItemSelect,
   onSortSet,
-  sort = { property: "", order: "" },
+  sort = { property: '', order: '' },
   canSelect = false,
   canSort = true,
   actions,
-  onItemClick = () => { },
+  onItemClick = (event, item) => {},
   emptyMessage,
   selectedItems,
   bodyHeight = '200px',
 }) => {
-  const [currentSort, setCurrentSort] = useState(sort);
-
+  const [currentSort, setCurrentSort] = useState(sort)
 
   const content = useContentLocalizer(localization)
 
   const toggleSelect = (item) => {
     let tempSelectedItems = [...selectedItems]
-    if (selectedItems.some(selectedItem => item[idKey] === selectedItem[idKey])) {
-      tempSelectedItems = tempSelectedItems.filter(selectedItem => item[idKey] !== selectedItem[idKey])
+    if (
+      selectedItems.some((selectedItem) => item[idKey] === selectedItem[idKey])
+    ) {
+      tempSelectedItems = tempSelectedItems.filter(
+        (selectedItem) => item[idKey] !== selectedItem[idKey]
+      )
     } else {
       tempSelectedItems.push(item)
     }
@@ -39,13 +42,15 @@ const BlipTableContainer = ({
       return false
     }
     let itIs = true
-    data.forEach(
-      item => {
-        if (!selectedItems.some(selectedItem => item[idKey] === selectedItem[idKey])) {
-          itIs = false
-        }
+    data.forEach((item) => {
+      if (
+        !selectedItems.some(
+          (selectedItem) => item[idKey] === selectedItem[idKey]
+        )
+      ) {
+        itIs = false
       }
-    )
+    })
     return itIs
   }, [selectedItems, data, idKey])
 
@@ -64,24 +69,26 @@ const BlipTableContainer = ({
     setCurrentSort(sort)
   }
 
-  return <BlipTableComponent
-    model={model}
-    data={data}
-    idKey={idKey}
-    selectedItems={selectedItems}
-    toggleSelect={toggleSelect}
-    toggleSelectAll={toggleSelectAll}
-    canSelect={canSelect}
-    canSort={canSort}
-    currentSort={currentSort}
-    setSort={setSort}
-    content={content}
-    onItemClick={onItemClick}
-    actions={actions}
-    emptyMessage={emptyMessage || content.emptyMessage}
-    isAllSelected={isAllSelected}
-    bodyHeight={bodyHeight}
-  />
+  return (
+    <BlipTableComponent
+      model={model}
+      data={data}
+      idKey={idKey}
+      selectedItems={selectedItems}
+      toggleSelect={toggleSelect}
+      toggleSelectAll={toggleSelectAll}
+      canSelect={canSelect}
+      canSort={canSort}
+      currentSort={currentSort}
+      setSort={setSort}
+      content={content}
+      onItemClick={onItemClick}
+      actions={actions}
+      emptyMessage={emptyMessage || content.emptyMessage}
+      isAllSelected={isAllSelected}
+      bodyHeight={bodyHeight}
+    />
+  )
 }
 
 BlipTableContainer.propTypes = {

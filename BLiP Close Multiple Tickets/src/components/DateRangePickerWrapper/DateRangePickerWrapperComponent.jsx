@@ -15,6 +15,7 @@ export const DateRangePickerWrapperComponent = (props) => (
       displayFormat="DD/MM/YYYY"
       minimumNights={0}
       customArrowIcon="-"
-      {...props} />
+      {...props}
+    />
   </div>
 )

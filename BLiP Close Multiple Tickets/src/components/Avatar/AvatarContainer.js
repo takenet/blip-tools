@@ -30,12 +30,15 @@ export const AvatarContainer = ({
     }
   }
 
-  return <AvatarComponent
-    updateImage={updateImage}
-    img={img}
-    canEdit={canEdit}
-    isLoading={isLoading}
-    changePicLabel={changePicLabel} />
+  return (
+    <AvatarComponent
+      updateImage={updateImage}
+      img={img}
+      canEdit={canEdit}
+      isLoading={isLoading}
+      changePicLabel={changePicLabel}
+    />
+  )
 }
 
 AvatarContainer.propTypes = {
